@@ -200,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="97.8515625" y="147.65625"/>
         </scene>
-        <!--Record-->
+        <!--Recorder View Controller-->
         <scene sceneID="Itj-Bg-Aoi">
             <objects>
                 <viewController id="03P-G0-K4B" customClass="recorderViewController" customModule="convert" customModuleProvider="target" sceneMemberID="viewController">
@@ -225,19 +225,19 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="Convert to Sheet music"/>
                                 <connections>
-                                    <segue destination="1Ek-KK-IsG" kind="show" id="kTU-FY-SA3"/>
+                                    <segue destination="tQe-at-kjF" kind="show" id="G6W-Up-OMM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Record" image="Microphone_000000_25" id="WPH-vR-Pzo"/>
+                    <navigationItem key="navigationItem" id="rfs-MC-dsM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyl-xS-nBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97.8515625" y="969.53125"/>
+            <point key="canvasLocation" x="822.0703125" y="969.53125"/>
         </scene>
-        <!--Item-->
+        <!--Saved-->
         <scene sceneID="DWI-hG-MhY">
             <objects>
                 <viewController id="yoS-VW-1P4" sceneMemberID="viewController">
@@ -259,13 +259,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="Music Transcript_000000_25" id="JZv-XJ-vre"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="Music Transcript_000000_25" id="JZv-XJ-vre"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0h-Hc-0Fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="106.640625" y="1827.34375"/>
         </scene>
-        <!--View Controller-->
+        <!--Generated Sheet-->
         <scene sceneID="2TS-aV-wRT">
             <objects>
                 <viewController id="tQe-at-kjF" sceneMemberID="viewController">
@@ -292,11 +292,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CLZ-6Y-DJG"/>
+                    <navigationItem key="navigationItem" title="Generated Sheet" id="CLZ-6Y-DJG">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="48F-bF-UbG"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byQ-D8-Gxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666.9921875" y="985.9375"/>
+            <point key="canvasLocation" x="1600" y="970"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="R3g-7U-lB8">
@@ -337,7 +339,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="1Zn-kE-lhM"/>
-                        <segue destination="03P-G0-K4B" kind="relationship" relationship="viewControllers" id="bDy-0R-LNn"/>
+                        <segue destination="QT3-9y-ns4" kind="relationship" relationship="viewControllers" id="bDy-0R-LNn"/>
                         <segue destination="yoS-VW-1P4" kind="relationship" relationship="viewControllers" id="JA4-Ke-vh0"/>
                     </connections>
                 </tabBarController>
@@ -345,23 +347,24 @@
             </objects>
             <point key="canvasLocation" x="-872" y="502"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="X0O-7l-dAC">
+        <!--Record-->
+        <scene sceneID="wiv-oT-i42">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Ek-KK-IsG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QT3-9y-ns4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Record" image="Microphone_000000_25" id="WPH-vR-Pzo"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ape-PT-aej">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="92l-fK-NRq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tQe-at-kjF" kind="relationship" relationship="rootViewController" id="6Sm-4h-h2c"/>
+                        <segue destination="03P-G0-K4B" kind="relationship" relationship="rootViewController" id="EFj-Vs-ehx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SoC-g9-IJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJl-Zx-n19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942.77343749999989" y="985.9375"/>
+            <point key="canvasLocation" x="97.8515625" y="969.53125"/>
         </scene>
     </scenes>
     <resources>
