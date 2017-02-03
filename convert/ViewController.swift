@@ -47,18 +47,33 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first{
-            let position = touch.location(in: self.staffone)
+            let position = touch.location(in: self.stafftwo)
             print(position.x)
             print(position.y)
         }
     }
+    // note = x
+// spaces----------------------------
+    // F_l = 66
+    // A   = 52                 difference  = 12.5
+    // C_h = 38
+    // E_h = 24
     
+// lines-----------------------------
+    // E_l= 72
+    // G  = 58
+    // B  = 46                   difference  = 12.5
+    // D  = 32
+    // F_h= 18
+    
+
     
     
     @IBAction func Cbtn(_ sender: Any) {
         count += 1
 //        findypos()
         print(count)
+//        findypos(y: <#T##Int#>)
         placeview(xcoord: 100, ycoord: 100)
     }
     @IBAction func Dbtn(_ sender: Any) {
@@ -71,35 +86,37 @@ class ViewController: UIViewController {
         count += 1
 //        findypos()
         print(count)
-        placeview(xcoord: 200, ycoord: 100)
+        placeview(xcoord: 200, ycoord: Int(72))
     }
     @IBAction func Fbtn(_ sender: Any) {
         count += 1
 //        findypos()
         print(count)
         
-        placeview(xcoord: 300, ycoord: 100)
+        placeview(xcoord: 300, ycoord: Int(66))
     }
     @IBAction func Gbtn(_ sender: Any) {
         count += 1
 //        findypos()
         print(count)
         
-        placeview(xcoord: 400, ycoord: 100)
+        placeview(xcoord: 400, ycoord: 58)
     }
     @IBAction func Abtn(_ sender: Any) {
         count += 1
 //        findypos()
         print(count)
-        placeview(xcoord: 500, ycoord: 100)
+        placeview(xcoord: 500, ycoord: 52)
     }
     @IBAction func Bbtn(_ sender: Any) {
         count += 1
 //        findypos()
         print(count)
-        placeview(xcoord: 600, ycoord: 100)
+        placeview(xcoord: 600, ycoord: 46)
     }
     
+    // add a new parameter to change the staff if count% 10 == 0
+    // fix the y coordinates and change the uiview controllers
     func placeview(xcoord:Int, ycoord: Int)
     {
         let imageName = "semibreve(25).png"
@@ -112,11 +129,24 @@ class ViewController: UIViewController {
         view.addSubview(imageView)
     }
     
-    func findypos()
-    {
-        
+    func changestaff()->Bool{
+        if count%10 == 0{
+            return true
+        }
+        else{
+            return false
+        }
     }
-    
+//    
+//    func findypos(y: Int)-> Int
+//    {
+//        // difference between two staffs 205
+//        if changestaff() == true
+//        {
+//            return y
+//        }
+//    }
+//    
     func findxpos()
     {
     
