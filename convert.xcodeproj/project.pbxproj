@@ -14,6 +14,7 @@
 		BE1DD1751E3C351200C683B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */; };
 		BE1DD1801E3C351200C683B7 /* convertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD17F1E3C351200C683B7 /* convertTests.swift */; };
 		BE1DD18B1E3C351200C683B7 /* convertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD18A1E3C351200C683B7 /* convertUITests.swift */; };
+		BEFF715A1E4507A9008A2A17 /* recorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF71591E4507A9008A2A17 /* recorderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BE1DD1861E3C351200C683B7 /* convertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = convertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1DD18A1E3C351200C683B7 /* convertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = convertUITests.swift; sourceTree = "<group>"; };
 		BE1DD18C1E3C351200C683B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEFF71591E4507A9008A2A17 /* recorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recorderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				BE1DD16A1E3C351200C683B7 /* AppDelegate.swift */,
 				BE1DD16C1E3C351200C683B7 /* ViewController.swift */,
+				BEFF71591E4507A9008A2A17 /* recorderViewController.swift */,
 				BE1DD16E1E3C351200C683B7 /* Main.storyboard */,
 				BE1DD1711E3C351200C683B7 /* Assets.xcassets */,
 				BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				BE1DD16D1E3C351200C683B7 /* ViewController.swift in Sources */,
 				BE1DD16B1E3C351200C683B7 /* AppDelegate.swift in Sources */,
+				BEFF715A1E4507A9008A2A17 /* recorderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +509,7 @@
 				BE1DD1911E3C351200C683B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE1DD1921E3C351200C683B7 /* Build configuration list for PBXNativeTarget "convertTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				BE1DD1941E3C351200C683B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE1DD1951E3C351200C683B7 /* Build configuration list for PBXNativeTarget "convertUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				BE1DD1971E3C351200C683B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
