@@ -15,6 +15,8 @@
 		BE1DD1801E3C351200C683B7 /* convertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD17F1E3C351200C683B7 /* convertTests.swift */; };
 		BE1DD18B1E3C351200C683B7 /* convertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD18A1E3C351200C683B7 /* convertUITests.swift */; };
 		BEFF715A1E4507A9008A2A17 /* recorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF71591E4507A9008A2A17 /* recorderViewController.swift */; };
+		BEFF715E1E45336E008A2A17 /* GuitarTunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF715D1E45336E008A2A17 /* GuitarTunerViewController.swift */; };
+		BEFF71601E4533B8008A2A17 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF715F1E4533B8008A2A17 /* SavedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BE1DD18A1E3C351200C683B7 /* convertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = convertUITests.swift; sourceTree = "<group>"; };
 		BE1DD18C1E3C351200C683B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFF71591E4507A9008A2A17 /* recorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recorderViewController.swift; sourceTree = "<group>"; };
+		BEFF715D1E45336E008A2A17 /* GuitarTunerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarTunerViewController.swift; sourceTree = "<group>"; };
+		BEFF715F1E4533B8008A2A17 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +107,11 @@
 				BE1DD16C1E3C351200C683B7 /* ViewController.swift */,
 				BEFF71591E4507A9008A2A17 /* recorderViewController.swift */,
 				BE1DD16E1E3C351200C683B7 /* Main.storyboard */,
+				BEFF715F1E4533B8008A2A17 /* SavedViewController.swift */,
 				BE1DD1711E3C351200C683B7 /* Assets.xcassets */,
 				BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */,
 				BE1DD1761E3C351200C683B7 /* Info.plist */,
+				BEFF715D1E45336E008A2A17 /* GuitarTunerViewController.swift */,
 			);
 			path = convert;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 				BE1DD16D1E3C351200C683B7 /* ViewController.swift in Sources */,
 				BE1DD16B1E3C351200C683B7 /* AppDelegate.swift in Sources */,
 				BEFF715A1E4507A9008A2A17 /* recorderViewController.swift in Sources */,
+				BEFF71601E4533B8008A2A17 /* SavedViewController.swift in Sources */,
+				BEFF715E1E45336E008A2A17 /* GuitarTunerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

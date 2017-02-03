@@ -237,10 +237,38 @@
             </objects>
             <point key="canvasLocation" x="822.0703125" y="969.53125"/>
         </scene>
+        <!--Tuner-->
+        <scene sceneID="xnM-gd-Pxf">
+            <objects>
+                <viewController id="JDV-Gt-QTU" customClass="GuitarTunerViewController" customModule="convert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aaq-4s-Ziu"/>
+                        <viewControllerLayoutGuide type="bottom" id="cqv-Xu-84F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p4V-Tw-3go">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guitar Tuner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAv-gf-cIf">
+                                <rect key="frame" x="29" y="296" width="967" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tuner" image="Rock Music_000000_25" id="Dd4-In-D6X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5d-eO-iyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-872" y="1827"/>
+        </scene>
         <!--Saved-->
         <scene sceneID="DWI-hG-MhY">
             <objects>
-                <viewController id="yoS-VW-1P4" sceneMemberID="viewController">
+                <viewController id="yoS-VW-1P4" customClass="SavedViewController" customModule="convert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ET7-Oz-Zkw"/>
                         <viewControllerLayoutGuide type="bottom" id="u4V-Z1-rE6"/>
@@ -341,6 +369,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="1Zn-kE-lhM"/>
                         <segue destination="QT3-9y-ns4" kind="relationship" relationship="viewControllers" id="bDy-0R-LNn"/>
                         <segue destination="yoS-VW-1P4" kind="relationship" relationship="viewControllers" id="JA4-Ke-vh0"/>
+                        <segue destination="JDV-Gt-QTU" kind="relationship" relationship="viewControllers" id="ddu-gy-6Ob"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnM-wq-QrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,6 +400,7 @@
         <image name="Classic Music_000000_25" width="25" height="25"/>
         <image name="Microphone_000000_25" width="25" height="25"/>
         <image name="Music Transcript_000000_25" width="25" height="25"/>
+        <image name="Rock Music_000000_25" width="25" height="25"/>
         <image name="music-staff" width="700" height="163"/>
     </resources>
 </document>
