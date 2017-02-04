@@ -14,6 +14,7 @@
 		BE1DD1751E3C351200C683B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */; };
 		BE1DD1801E3C351200C683B7 /* convertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD17F1E3C351200C683B7 /* convertTests.swift */; };
 		BE1DD18B1E3C351200C683B7 /* convertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD18A1E3C351200C683B7 /* convertUITests.swift */; };
+		BEC164561E45BF96007278CF /* sound in Resources */ = {isa = PBXBuildFile; fileRef = BEC164551E45BF96007278CF /* sound */; };
 		BEFF715A1E4507A9008A2A17 /* recorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF71591E4507A9008A2A17 /* recorderViewController.swift */; };
 		BEFF715E1E45336E008A2A17 /* GuitarTunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF715D1E45336E008A2A17 /* GuitarTunerViewController.swift */; };
 		BEFF71601E4533B8008A2A17 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF715F1E4533B8008A2A17 /* SavedViewController.swift */; };
@@ -50,6 +51,7 @@
 		BE1DD1861E3C351200C683B7 /* convertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = convertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1DD18A1E3C351200C683B7 /* convertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = convertUITests.swift; sourceTree = "<group>"; };
 		BE1DD18C1E3C351200C683B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEC164551E45BF96007278CF /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sound; path = ../sound; sourceTree = "<group>"; };
 		BEFF71591E4507A9008A2A17 /* recorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recorderViewController.swift; sourceTree = "<group>"; };
 		BEFF715D1E45336E008A2A17 /* GuitarTunerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarTunerViewController.swift; sourceTree = "<group>"; };
 		BEFF715F1E4533B8008A2A17 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		BE1DD15E1E3C351200C683B7 = {
 			isa = PBXGroup;
 			children = (
+				BEC164551E45BF96007278CF /* sound */,
 				BE1DD1691E3C351200C683B7 /* convert */,
 				BE1DD17E1E3C351200C683B7 /* convertTests */,
 				BE1DD1891E3C351200C683B7 /* convertUITests */,
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC164561E45BF96007278CF /* sound in Resources */,
 				BE1DD1751E3C351200C683B7 /* LaunchScreen.storyboard in Resources */,
 				BE1DD1721E3C351200C683B7 /* Assets.xcassets in Resources */,
 				BE1DD1701E3C351200C683B7 /* Main.storyboard in Resources */,

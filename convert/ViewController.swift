@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -22,6 +23,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var A: UIButton!
     @IBOutlet weak var B: UIButton!
     @IBOutlet weak var C_h: UIButton!
+    
+    var audioPlayer: AVAudioPlayer! = nil
+    //var player: AVAudioPlayer! = nil
     
     var count = 1
     
@@ -68,14 +72,13 @@ class ViewController: UIViewController {
         C_h.layer.borderWidth = 1
         C_h.layer.borderColor = UIColor.black.cgColor
         
- 
         
+   
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
-        
+
         // Dispose of any resources that can be recreated.
     }
     
@@ -112,48 +115,45 @@ class ViewController: UIViewController {
     // F_h= 30
     
 
-
-    
     
     @IBAction func Cbtn(_ sender: Any) {
-        
+        playMyFile(fname: "C3")
         count += 1
-
         placeview(xcoord: count*75, ycoord: 78)
     }
     @IBAction func Dbtn(_ sender: Any) {
         count += 1
-
+        playMyFile(fname: "D")
         placeview(xcoord: count*75, ycoord: 72)
     }
     @IBAction func Ebtn(_ sender: Any) {
         count += 1
-
+        playMyFile(fname: "E")
         placeview(xcoord: count*75, ycoord: Int(66))
     }
     @IBAction func Fbtn(_ sender: Any) {
         count += 1
-
+        playMyFile(fname: "F")
         placeview(xcoord: count*75, ycoord: Int(60))
     }
     @IBAction func Gbtn(_ sender: Any) {
         count += 1
-
+        playMyFile(fname: "G")
         placeview(xcoord: count*75, ycoord: 54)
     }
     @IBAction func Abtn(_ sender: Any) {
         count += 1
-
+        playMyFile(fname: "A")
         placeview(xcoord: count*75, ycoord: 48)
     }
     @IBAction func Bbtn(_ sender: Any) {
         count += 1
-
+        playMyFile(fname: "B")
         placeview(xcoord: count*75, ycoord: 42)
     }
     @IBAction func C_hbtn(_ sender: Any) {
         count += 1
-        
+        playMyFile(fname: "C4")
         placeview(xcoord: count*75, ycoord: 36)
     }
     
@@ -178,6 +178,21 @@ class ViewController: UIViewController {
         else{
             print("take screenshot and remove subviews")
         }
+    }
+    
+    
+    func playMyFile(fname: String) {
+        
+        let path = Bundle.main.path(forResource: "sound/"+String(fname), ofType: "mp3")
+        let fileURL = NSURL(fileURLWithPath: path!)
+        
+        do {
+            try audioPlayer =  AVAudioPlayer(contentsOf: fileURL as URL)
+        } catch {
+            print("error")
+        }
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
     }
     
 
