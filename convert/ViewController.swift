@@ -102,7 +102,7 @@ class ViewController: UIViewController {
     // note = x
 // spaces----------------------------
     // F_l = 60
-    // A   = 48                 difference  = 12.5
+    // A   = 48                 difference  = 12
     // C_h = 36
     // E_h = 24
     // D_l =
@@ -110,7 +110,7 @@ class ViewController: UIViewController {
 // lines-----------------------------
     // E_l= 66
     // G  = 54
-    // B  = 42                  difference  = 12.5
+    // B  = 42                  difference  = 12
     // D_h= 38
     // F_h= 30
     
@@ -119,50 +119,76 @@ class ViewController: UIViewController {
     @IBAction func Cbtn(_ sender: Any) {
         playMyFile(fname: "C3")
         count += 1
-        placeview(xcoord: count*75, ycoord: 78)
+        placeviewsemibreve(xcoord: count*75, ycoord: 78)
     }
     @IBAction func Dbtn(_ sender: Any) {
         count += 1
         playMyFile(fname: "D")
-        placeview(xcoord: count*75, ycoord: 72)
+        placeviewsemibreve(xcoord: count*75, ycoord: 72)
     }
     @IBAction func Ebtn(_ sender: Any) {
         count += 1
         playMyFile(fname: "E")
-        placeview(xcoord: count*75, ycoord: Int(66))
+        placeviewsemibreve(xcoord: count*75, ycoord: Int(66))
     }
     @IBAction func Fbtn(_ sender: Any) {
         count += 1
         playMyFile(fname: "F")
-        placeview(xcoord: count*75, ycoord: Int(60))
+        placeviewsemibreve(xcoord: count*75, ycoord: Int(60))
     }
     @IBAction func Gbtn(_ sender: Any) {
         count += 1
         playMyFile(fname: "G")
-        placeview(xcoord: count*75, ycoord: 54)
+        placeviewsemibreve(xcoord: count*75, ycoord: 54)
     }
     @IBAction func Abtn(_ sender: Any) {
         count += 1
         playMyFile(fname: "A")
-        placeview(xcoord: count*75, ycoord: 48)
+        placeviewsemibreve(xcoord: count*75, ycoord: 48)
     }
     @IBAction func Bbtn(_ sender: Any) {
         count += 1
         playMyFile(fname: "B")
-        placeview(xcoord: count*75, ycoord: 42)
+        placeviewsemibreve(xcoord: count*75, ycoord: 42)
     }
     @IBAction func C_hbtn(_ sender: Any) {
         count += 1
         playMyFile(fname: "C4")
-        placeview(xcoord: count*75, ycoord: 36)
+        placeviewsemibreve(xcoord: count*75, ycoord: 36)
     }
     
     
-    // add a new parameter to change the staff if count% 10 == 0
-    // fix the y coordinates and change the uiview controllers
-    func placeview(xcoord:Int, ycoord: Int)
+// add a new parameter to change the staff if count% 10 == 0
+    
+// whole note function
+    func placeviewsemibreve(xcoord:Int, ycoord: Int)
     {
-        let imageName = "semibreve(25).png"
+        let imageName = "semebreve(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 45)
+        
+        if count<15{
+            staffone.addSubview(imageView)
+        }
+        else if count<30{
+            count = 1
+            stafftwo.addSubview(imageView)
+        }
+        else{
+            print("take screenshot and remove subviews")
+        }
+    }
+ 
+// write mods for quarter note
+// write function for half note(find pic too)
+// write function for one eigth note(find pic too)
+//
+    
+    func placeviewquartet(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "quartet25.png"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
         imageView.contentMode = .scaleAspectFill
