@@ -336,11 +336,6 @@
                                     <color key="titleColor" red="0.00045323109949999999" green="0.2491315603" blue="0.35732567310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <connections>
-                                <segue destination="yoS-VW-1P4" kind="popoverPresentation" popoverAnchorBarButtonItem="dTQ-bZ-qw4" id="DMX-cA-swR">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -424,7 +419,4 @@
         <image name="Rock Music_000000_25" width="25" height="25"/>
         <image name="music-staff" width="700" height="163"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="DMX-cA-swR"/>
-    </inferredMetricsTieBreakers>
 </document>
