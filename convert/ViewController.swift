@@ -236,6 +236,30 @@ class ViewController: UIViewController {
         }
     }
     
+    func placeviewsharp(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "sharp25.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 20, height: 35)
+        
+        if count<15{
+            staffone.addSubview(imageView)
+        }
+        else if count>15 && count<17{
+            self.xpos = 75
+        }
+        else if xpos>16
+        {
+            stafftwo.addSubview(imageView)
+        }
+        else {
+            print("take screenshot and remove subviews")
+        }
+    }
+
+    
     
     
     
