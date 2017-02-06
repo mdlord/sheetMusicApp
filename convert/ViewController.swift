@@ -24,6 +24,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var B: UIButton!
     @IBOutlet weak var C_h: UIButton!
     
+    @IBOutlet weak var Csh: UIButton!
+    @IBOutlet weak var Dsh: UIButton!
+    @IBOutlet weak var Fsh: UIButton!
+    @IBOutlet weak var Gsh: UIButton!
+    @IBOutlet weak var Ash: UIButton!
+    
     var audioPlayer: AVAudioPlayer! = nil
     //var player: AVAudioPlayer! = nil
     
@@ -83,13 +89,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let touch = touches.first {
-//            let position = touch.location(in: self)
-//            print(position.x)
-//            print(position.y)
-//        }
-//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first{
@@ -163,6 +162,39 @@ class ViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "C4")
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+    }
+    
+    // place a sharp sign before these notes
+    @IBAction func Csh_btn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "C#")
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+    }
+    @IBAction func Dsh_btn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "D#")
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+    }
+    @IBAction func Fsh_btn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "F#")
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+    }
+    @IBAction func Gsh_btn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "G#")
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+    }
+
+    @IBAction func Ash_btn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "A#")
         placeviewsemibreve(xcoord: xpos, ycoord: 36)
     }
     

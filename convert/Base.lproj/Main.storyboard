@@ -141,6 +141,9 @@
                                 <state key="normal" title="C#">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Csh_btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wL-1P-h8X"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-b7-wbw">
                                 <rect key="frame" x="219" y="422" width="67" height="185"/>
@@ -150,6 +153,9 @@
                                 <state key="normal" title="D#">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Dsh_btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJ5-t6-3HW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pck-5z-Gfe">
                                 <rect key="frame" x="479" y="422" width="67" height="185"/>
@@ -159,24 +165,33 @@
                                 <state key="normal" title="F#">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc5-fp-TjL">
-                                <rect key="frame" x="607" y="422" width="67" height="185"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.043654305710000001" green="0.044113824709999999" blue="0.044113824709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="G#">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="Fsh_btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ccg-Y5-aLS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Je-ZP-jEg">
-                                <rect key="frame" x="742" y="424" width="67" height="185"/>
+                                <rect key="frame" x="742" y="422" width="67" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.043654305710000001" green="0.044113824709999999" blue="0.044113824709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="A#">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Ash_btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUV-YF-Whi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc5-fp-TjL">
+                                <rect key="frame" x="620" y="422" width="67" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.043654305710000001" green="0.044113824709999999" blue="0.044113824709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="G#">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Gsh_btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBV-0E-xxW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -185,13 +200,18 @@
                     <navigationItem key="navigationItem" id="UAL-QF-heE"/>
                     <connections>
                         <outlet property="A" destination="Cto-XD-dMj" id="0hz-6y-hgs"/>
+                        <outlet property="Ash" destination="2Je-ZP-jEg" id="jml-NJ-zEE"/>
                         <outlet property="B" destination="gA2-7J-VWi" id="mbH-tv-hvo"/>
                         <outlet property="C" destination="ZNx-FL-jgk" id="Gvn-ym-6Jt"/>
                         <outlet property="C_h" destination="fRT-lf-X48" id="UHa-JT-A3v"/>
+                        <outlet property="Csh" destination="RmO-N2-2Ws" id="e8W-iQ-8RG"/>
                         <outlet property="D" destination="WJq-KJ-DeA" id="KUX-wg-eYt"/>
+                        <outlet property="Dsh" destination="CFH-b7-wbw" id="K6i-g1-NXJ"/>
                         <outlet property="E" destination="zFz-Y2-8f8" id="mdX-E3-IFZ"/>
                         <outlet property="F" destination="lkB-Kx-By1" id="UCO-pQ-dKG"/>
+                        <outlet property="Fsh" destination="Pck-5z-Gfe" id="m07-0N-z9L"/>
                         <outlet property="G" destination="Ls5-tg-Mla" id="ObF-uU-nFX"/>
+                        <outlet property="Gsh" destination="zc5-fp-TjL" id="wZK-8F-j6e"/>
                         <outlet property="staffone" destination="Muf-zo-grY" id="dPS-hl-9xD"/>
                         <outlet property="stafftwo" destination="JKC-Ym-GcZ" id="AdC-vN-CNZ"/>
                     </connections>
