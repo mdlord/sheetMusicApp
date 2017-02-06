@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     //var player: AVAudioPlayer! = nil
     
     var count = 1
+    var xpos = 75
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,51 +120,70 @@ class ViewController: UIViewController {
     @IBAction func Cbtn(_ sender: Any) {
         playMyFile(fname: "C3")
         count += 1
-        placeviewsemibreve(xcoord: count*75, ycoord: 78)
+        xpos = xpos+75
+        placeviewsemibreve(xcoord: xpos, ycoord: 78)
     }
     @IBAction func Dbtn(_ sender: Any) {
         count += 1
+        xpos = xpos+75
         playMyFile(fname: "D")
-        placeviewsemibreve(xcoord: count*75, ycoord: 72)
+        placeviewsemibreve(xcoord: xpos, ycoord: 72)
     }
     @IBAction func Ebtn(_ sender: Any) {
         count += 1
+        xpos = xpos+75
         playMyFile(fname: "E")
-        placeviewsemibreve(xcoord: count*75, ycoord: Int(66))
+        placeviewsemibreve(xcoord: xpos, ycoord: Int(66))
     }
     @IBAction func Fbtn(_ sender: Any) {
         count += 1
+        xpos = xpos+75
         playMyFile(fname: "F")
-        placeviewsemibreve(xcoord: count*75, ycoord: Int(60))
+        placeviewsemibreve(xcoord: xpos, ycoord: Int(60))
     }
     @IBAction func Gbtn(_ sender: Any) {
         count += 1
+        xpos = xpos+75
         playMyFile(fname: "G")
-        placeviewsemibreve(xcoord: count*75, ycoord: 54)
+        placeviewsemibreve(xcoord: xpos, ycoord: 54)
     }
     @IBAction func Abtn(_ sender: Any) {
         count += 1
+        xpos = xpos+75
         playMyFile(fname: "A")
-        placeviewsemibreve(xcoord: count*75, ycoord: 48)
+        placeviewsemibreve(xcoord: xpos, ycoord: 48)
     }
     @IBAction func Bbtn(_ sender: Any) {
         count += 1
+        xpos = xpos+75
         playMyFile(fname: "B")
-        placeviewsemibreve(xcoord: count*75, ycoord: 42)
+        placeviewsemibreve(xcoord: xpos, ycoord: 42)
     }
     @IBAction func C_hbtn(_ sender: Any) {
         count += 1
+        xpos = xpos+75
         playMyFile(fname: "C4")
-        placeviewsemibreve(xcoord: count*75, ycoord: 36)
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
     }
     
+
+// add a dictionary for the value of the notes to put a break after evry 4 beats
+    
+    // semibreve = whole note
+    //minim = half note
+    //quartet = one fourth note
+    //quaver = one eigth note
+    var countbt = [4 : "semibreve",
+                   2: "minim",
+                   1: "quartet",
+                   0.5: "quaver"]
     
 // add a new parameter to change the staff if count% 10 == 0
     
 // whole note function
     func placeviewsemibreve(xcoord:Int, ycoord: Int)
     {
-        let imageName = "semebreve(25).png"
+        let imageName = "semibreve(25).png"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
         imageView.contentMode = .scaleAspectFill
@@ -172,14 +192,23 @@ class ViewController: UIViewController {
         if count<15{
             staffone.addSubview(imageView)
         }
-        else if count<30{
-            count = 1
+        else if count>15 && count<17{
+            self.xpos = 75
+        }
+        else if xpos>16
+        {
             stafftwo.addSubview(imageView)
         }
-        else{
+        else {
             print("take screenshot and remove subviews")
         }
     }
+    
+    
+    
+    
+    
+    
  
 // write mods for quarter note
 // write function for half note(find pic too)
