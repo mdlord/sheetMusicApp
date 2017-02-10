@@ -11,6 +11,7 @@ target 'convert' do
 	pod ‘Pitchy’
 	pod ‘Hue’
 	pod ‘Cartography’
+	pod ‘AudioKit’, ‘~>2.3’
 
   target 'convertTests' do
     inherit! :search_paths

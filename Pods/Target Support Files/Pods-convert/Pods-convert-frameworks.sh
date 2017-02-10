@@ -84,12 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/AudioKit/AudioKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Beethoven/Beethoven.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Hue/Hue.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Pitchy/Pitchy.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/AudioKit/AudioKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Beethoven/Beethoven.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Hue/Hue.framework"
