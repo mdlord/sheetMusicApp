@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7Aa-DX-uWs">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Piano-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="convert" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PianoViewController" customModule="convert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -313,6 +313,24 @@
             </objects>
             <point key="canvasLocation" x="106.640625" y="1827.34375"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="VjB-9S-wkO">
+            <objects>
+                <viewController id="7Aa-DX-uWs" customClass="ViewController" customModule="convert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DRG-C0-kLz"/>
+                        <viewControllerLayoutGuide type="bottom" id="BjX-tD-IhD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rov-LN-QSN">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZn-NV-v7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-64" y="3492"/>
+        </scene>
         <!--Generated Sheet-->
         <scene sceneID="2TS-aV-wRT">
             <objects>
@@ -349,7 +367,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="48F-bF-UbG"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="dTQ-bZ-qw4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A4e-CX-uAt">
-                                <rect key="frame" x="777" y="7" width="227" height="30"/>
+                                <rect key="frame" x="132" y="7" width="227" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Save">

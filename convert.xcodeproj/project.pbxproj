@@ -16,10 +16,14 @@
 		BE1DD1751E3C351200C683B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */; };
 		BE1DD1801E3C351200C683B7 /* convertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD17F1E3C351200C683B7 /* convertTests.swift */; };
 		BE1DD18B1E3C351200C683B7 /* convertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD18A1E3C351200C683B7 /* convertUITests.swift */; };
+		BE6D75641E5B42000052E717 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75631E5B42000052E717 /* PlotView.swift */; };
+		BE6D75661E5B43530052E717 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75651E5B43530052E717 /* DisplayView.swift */; };
+		BE6D75681E5B45930052E717 /* PianoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75671E5B45930052E717 /* PianoViewController.swift */; };
+		BE6D756A1E5B5EDD0052E717 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75691E5B5EDD0052E717 /* Pitch.swift */; };
+		BE6D756C1E5B5F730052E717 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D756B1E5B5F730052E717 /* Note.swift */; };
+		BE6D756E1E5B622A0052E717 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D756D1E5B622A0052E717 /* Tuner.swift */; };
 		BEC164561E45BF96007278CF /* sound in Resources */ = {isa = PBXBuildFile; fileRef = BEC164551E45BF96007278CF /* sound */; };
 		BEFF715A1E4507A9008A2A17 /* recorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF71591E4507A9008A2A17 /* recorderViewController.swift */; };
-		BEFF715E1E45336E008A2A17 /* GuitarTunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF715D1E45336E008A2A17 /* GuitarTunerViewController.swift */; };
-		BEFF71601E4533B8008A2A17 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF715F1E4533B8008A2A17 /* SavedViewController.swift */; };
 		D07C870A9BB531D1392C2974 /* Pods_convert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD762E3FE5CDE0636603B0A /* Pods_convert.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,10 +67,14 @@
 		BE1DD1861E3C351200C683B7 /* convertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = convertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1DD18A1E3C351200C683B7 /* convertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = convertUITests.swift; sourceTree = "<group>"; };
 		BE1DD18C1E3C351200C683B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE6D75631E5B42000052E717 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
+		BE6D75651E5B43530052E717 /* DisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
+		BE6D75671E5B45930052E717 /* PianoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoViewController.swift; sourceTree = "<group>"; };
+		BE6D75691E5B5EDD0052E717 /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
+		BE6D756B1E5B5F730052E717 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		BE6D756D1E5B622A0052E717 /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
 		BEC164551E45BF96007278CF /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sound; path = ../sound; sourceTree = "<group>"; };
 		BEFF71591E4507A9008A2A17 /* recorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recorderViewController.swift; sourceTree = "<group>"; };
-		BEFF715D1E45336E008A2A17 /* GuitarTunerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarTunerViewController.swift; sourceTree = "<group>"; };
-		BEFF715F1E4533B8008A2A17 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,13 +143,17 @@
 			children = (
 				BE1DD16A1E3C351200C683B7 /* AppDelegate.swift */,
 				BE1DD16C1E3C351200C683B7 /* ViewController.swift */,
+				BE6D756D1E5B622A0052E717 /* Tuner.swift */,
+				BE6D75691E5B5EDD0052E717 /* Pitch.swift */,
+				BE6D75671E5B45930052E717 /* PianoViewController.swift */,
+				BE6D756B1E5B5F730052E717 /* Note.swift */,
 				BEFF71591E4507A9008A2A17 /* recorderViewController.swift */,
 				BE1DD16E1E3C351200C683B7 /* Main.storyboard */,
-				BEFF715F1E4533B8008A2A17 /* SavedViewController.swift */,
 				BE1DD1711E3C351200C683B7 /* Assets.xcassets */,
 				BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */,
 				BE1DD1761E3C351200C683B7 /* Info.plist */,
-				BEFF715D1E45336E008A2A17 /* GuitarTunerViewController.swift */,
+				BE6D75631E5B42000052E717 /* PlotView.swift */,
+				BE6D75651E5B43530052E717 /* DisplayView.swift */,
 			);
 			path = convert;
 			sourceTree = "<group>";
@@ -460,10 +472,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1DD16D1E3C351200C683B7 /* ViewController.swift in Sources */,
+				BE6D756E1E5B622A0052E717 /* Tuner.swift in Sources */,
+				BE6D756A1E5B5EDD0052E717 /* Pitch.swift in Sources */,
 				BE1DD16B1E3C351200C683B7 /* AppDelegate.swift in Sources */,
+				BE6D756C1E5B5F730052E717 /* Note.swift in Sources */,
 				BEFF715A1E4507A9008A2A17 /* recorderViewController.swift in Sources */,
-				BEFF71601E4533B8008A2A17 /* SavedViewController.swift in Sources */,
-				BEFF715E1E45336E008A2A17 /* GuitarTunerViewController.swift in Sources */,
+				BE6D75661E5B43530052E717 /* DisplayView.swift in Sources */,
+				BE6D75681E5B45930052E717 /* PianoViewController.swift in Sources */,
+				BE6D75641E5B42000052E717 /* PlotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
