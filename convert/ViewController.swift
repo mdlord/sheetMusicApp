@@ -24,9 +24,9 @@ class ViewController: UIViewController, TunerDelegate {
         
         /* Setup the display view. */
         displayView.frame = CGRect(
-            origin: CGPoint(x: round(self.view.bounds.width - 141)  / 2,
-                            y: round(self.view.bounds.height - 141) / 2),
-            size:   CGSize(width: 141, height: 141)
+            origin: CGPoint(x: round(self.view.bounds.width - 450)  / 2,
+                            y: round(self.view.bounds.height - 300) / 1),
+            size:   CGSize(width: 450, height: 170)
         )
         self.view.addSubview(displayView)
         

@@ -49,7 +49,7 @@ class AudioPlot: AKAudioPlot{
              * frequency change. */
             var t = (time + Double(i) / Double(num) * self.frequency + phase)
             
-            floats[i] = Float(sin(t * 2 * 3.14))
+            floats[i] = Float(sin(t*2*3.14))
             
             /* It is multiplied with a "regular" 0.5 Hz sine to get both ends
              * to fade out nicely. It's sort of a simplistic window function. */
