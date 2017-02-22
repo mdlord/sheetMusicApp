@@ -14,7 +14,7 @@ class ViewController: UIViewController, TunerDelegate {
     
     let tuner       = Tuner()
     let displayView = DisplayView()
-    //let knobView    = KnobView(frame: CGRect(x: 0, y: 0, width: 245, height: 245))
+    let knobView    = Labelsdisp(frame: CGRect(x: 0, y: 0, width: 245, height: 245))
     
     
     
@@ -40,12 +40,12 @@ class ViewController: UIViewController, TunerDelegate {
         self.view.addSubview(btn)
         
         /* Setup the knob view. */
-//        knobView.frame = CGRect(
-//            origin: CGPoint(x: round(self.view.bounds.width - 245) / 2,
-//                            y: round(self.view.bounds.height - 245) / 2),
-//            size:   CGSize(width: 245, height: 245)
-//        )
-//        self.view.addSubview(knobView)
+        knobView.frame = CGRect(
+            origin: CGPoint(x: round(self.view.bounds.width - 245) / 2,
+                            y: round(self.view.bounds.height - 245) / 2),
+            size:   CGSize(width: 245, height: 245)
+        )
+        self.view.addSubview(knobView)
         
         /* Start the tuner. */
         tuner.delegate = self
@@ -76,7 +76,7 @@ class ViewController: UIViewController, TunerDelegate {
             return
         }
         
-       // knobView.pitch = pitch
+        knobView.pitch = pitch
         
         /* Calculate the difference between the nearest pitch and the second
          * nearest pitch to express the distance in a percentage. */
@@ -86,7 +86,7 @@ class ViewController: UIViewController, TunerDelegate {
             (pitch.frequency - previous.frequency) :
             (next.frequency  - pitch.frequency)
         
-       //n knobView.distance = distance / difference / 2.0
+        //knobView.distance = distance / difference / 2.0
     }
     
     override func didReceiveMemoryWarning() {

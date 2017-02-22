@@ -39,46 +39,7 @@ class PianoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        C.backgroundColor = .clear
-        C.layer.cornerRadius = 1
-        C.layer.borderWidth = 1
-        C.layer.borderColor = UIColor.black.cgColor
-        
-        D.backgroundColor = .clear
-        D.layer.cornerRadius = 1
-        D.layer.borderWidth = 1
-        D.layer.borderColor = UIColor.black.cgColor
-        
-        E.backgroundColor = .clear
-        E.layer.cornerRadius = 1
-        E.layer.borderWidth = 1
-        E.layer.borderColor = UIColor.black.cgColor
-        
-        F.backgroundColor = .clear
-        F.layer.cornerRadius = 1
-        F.layer.borderWidth = 1
-        F.layer.borderColor = UIColor.black.cgColor
-        
-        G.backgroundColor = .clear
-        G.layer.cornerRadius = 1
-        G.layer.borderWidth = 1
-        G.layer.borderColor = UIColor.black.cgColor
-        
-        A.backgroundColor = .clear
-        A.layer.cornerRadius = 1
-        A.layer.borderWidth = 1
-        A.layer.borderColor = UIColor.black.cgColor
-        
-        B.backgroundColor = .clear
-        B.layer.cornerRadius = 1
-        B.layer.borderWidth = 1
-        B.layer.borderColor = UIColor.black.cgColor
-        
-        C_h.backgroundColor = .clear
-        C_h.layer.cornerRadius = 1
-        C_h.layer.borderWidth = 1
-        C_h.layer.borderColor = UIColor.black.cgColor
-        
+                
         
         
     }
