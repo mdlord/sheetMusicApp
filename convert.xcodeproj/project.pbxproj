@@ -22,6 +22,9 @@
 		BE6D756A1E5B5EDD0052E717 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75691E5B5EDD0052E717 /* Pitch.swift */; };
 		BE6D756C1E5B5F730052E717 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D756B1E5B5F730052E717 /* Note.swift */; };
 		BE6D756E1E5B622A0052E717 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D756D1E5B622A0052E717 /* Tuner.swift */; };
+		BE6D75731E5D45BA0052E717 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD16E1E3C351200C683B7 /* Main.storyboard */; };
+		BE6D75741E5D45BC0052E717 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD16E1E3C351200C683B7 /* Main.storyboard */; };
+		BE6D75771E5D45FA0052E717 /* mantavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75711E5D3F470052E717 /* mantavViewController.swift */; };
 		BEC164561E45BF96007278CF /* sound in Resources */ = {isa = PBXBuildFile; fileRef = BEC164551E45BF96007278CF /* sound */; };
 		D07C870A9BB531D1392C2974 /* Pods_convert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD762E3FE5CDE0636603B0A /* Pods_convert.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,7 @@
 		BE6D75691E5B5EDD0052E717 /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
 		BE6D756B1E5B5F730052E717 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		BE6D756D1E5B622A0052E717 /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
+		BE6D75711E5D3F470052E717 /* mantavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mantavViewController.swift; sourceTree = "<group>"; };
 		BEC164551E45BF96007278CF /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sound; path = ../sound; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +149,7 @@
 				BE1DD1711E3C351200C683B7 /* Assets.xcassets */,
 				BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */,
 				BE1DD1761E3C351200C683B7 /* Info.plist */,
+				BE6D75711E5D3F470052E717 /* mantavViewController.swift */,
 				BE1DD16C1E3C351200C683B7 /* ViewController.swift */,
 				BE6D756D1E5B622A0052E717 /* Tuner.swift */,
 				BE6D75691E5B5EDD0052E717 /* Pitch.swift */,
@@ -313,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6D75731E5D45BA0052E717 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6D75741E5D45BC0052E717 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +482,7 @@
 				BE6D756C1E5B5F730052E717 /* Note.swift in Sources */,
 				BE6D75661E5B43530052E717 /* DisplayView.swift in Sources */,
 				BE6D75681E5B45930052E717 /* PianoViewController.swift in Sources */,
+				BE6D75771E5D45FA0052E717 /* mantavViewController.swift in Sources */,
 				BE6D75641E5B42000052E717 /* PlotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
