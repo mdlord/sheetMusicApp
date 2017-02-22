@@ -16,6 +16,8 @@ class ViewController: UIViewController, TunerDelegate {
     let displayView = DisplayView()
     //let knobView    = KnobView(frame: CGRect(x: 0, y: 0, width: 245, height: 245))
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +32,13 @@ class ViewController: UIViewController, TunerDelegate {
         )
         self.view.addSubview(displayView)
         
+        let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
+        btn.backgroundColor = UIColor.red
+        btn.setTitle("Piano", for: .normal)
+        btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        btn.tag = 1
+        self.view.addSubview(btn)
+        
         /* Setup the knob view. */
 //        knobView.frame = CGRect(
 //            origin: CGPoint(x: round(self.view.bounds.width - 245) / 2,
@@ -41,6 +50,16 @@ class ViewController: UIViewController, TunerDelegate {
         /* Start the tuner. */
         tuner.delegate = self
         tuner.startMonitoring()
+        
+//        print("\(tuner.responds(to: self))")
+    }
+    
+    func buttonAction(sender: UIButton!) {
+        var btnsendtag: UIButton = sender
+        if btnsendtag.tag == 1 {
+            print("Piano")
+            self.performSegue(withIdentifier: "PianoSegue", sender: self)
+        }
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
