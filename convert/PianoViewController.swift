@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class PianoViewController: UIViewController {
-
+    
     @IBOutlet weak var staffone: UIImageView!
     @IBOutlet weak var stafftwo: UIImageView!
     
@@ -23,12 +23,18 @@ class PianoViewController: UIViewController {
     @IBOutlet weak var A: UIButton!
     @IBOutlet weak var B: UIButton!
     @IBOutlet weak var C_h: UIButton!
+    @IBOutlet weak var D_h: UIButton!
+    @IBOutlet weak var E_h: UIButton!
+    @IBOutlet weak var F_h: UIButton!
     
     @IBOutlet weak var Csh: UIButton!
     @IBOutlet weak var Dsh: UIButton!
     @IBOutlet weak var Fsh: UIButton!
     @IBOutlet weak var Gsh: UIButton!
     @IBOutlet weak var Ash: UIButton!
+    @IBOutlet weak var Csh_h: UIButton!
+    @IBOutlet weak var Dsh_h: UIButton!
+    @IBOutlet weak var Fsh_h: UIButton!
     
     var audioPlayer: AVAudioPlayer! = nil
     //var player: AVAudioPlayer! = nil
@@ -39,7 +45,61 @@ class PianoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                
+        C.backgroundColor = .clear
+        C.layer.cornerRadius = 1
+        C.layer.borderWidth = 1
+        C.layer.borderColor = UIColor.black.cgColor
+        
+        D.backgroundColor = .clear
+        D.layer.cornerRadius = 1
+        D.layer.borderWidth = 1
+        D.layer.borderColor = UIColor.black.cgColor
+        
+        E.backgroundColor = .clear
+        E.layer.cornerRadius = 1
+        E.layer.borderWidth = 1
+        E.layer.borderColor = UIColor.black.cgColor
+        
+        F.backgroundColor = .clear
+        F.layer.cornerRadius = 1
+        F.layer.borderWidth = 1
+        F.layer.borderColor = UIColor.black.cgColor
+        
+        G.backgroundColor = .clear
+        G.layer.cornerRadius = 1
+        G.layer.borderWidth = 1
+        G.layer.borderColor = UIColor.black.cgColor
+        
+        A.backgroundColor = .clear
+        A.layer.cornerRadius = 1
+        A.layer.borderWidth = 1
+        A.layer.borderColor = UIColor.black.cgColor
+        
+        B.backgroundColor = .clear
+        B.layer.cornerRadius = 1
+        B.layer.borderWidth = 1
+        B.layer.borderColor = UIColor.black.cgColor
+        
+        C_h.backgroundColor = .clear
+        C_h.layer.cornerRadius = 1
+        C_h.layer.borderWidth = 1
+        C_h.layer.borderColor = UIColor.black.cgColor
+        
+        D_h.backgroundColor = .clear
+        D_h.layer.cornerRadius = 1
+        D_h.layer.borderWidth = 1
+        D_h.layer.borderColor = UIColor.black.cgColor
+        
+        E_h.backgroundColor = .clear
+        E_h.layer.cornerRadius = 1
+        E_h.layer.borderWidth = 1
+        E_h.layer.borderColor = UIColor.black.cgColor
+        
+        F_h.backgroundColor = .clear
+        F_h.layer.cornerRadius = 1
+        F_h.layer.borderWidth = 1
+        F_h.layer.borderColor = UIColor.black.cgColor
+        
         
         
     }
@@ -78,7 +138,7 @@ class PianoViewController: UIViewController {
     
     
     @IBAction func Cbtn(_ sender: Any) {
-        playMyFile(fname: "C3")
+        playMyFile(fname: "C")
         count += 1
         xpos = xpos+75
         placeviewsemibreve(xcoord: xpos, ycoord: 78)
@@ -126,38 +186,84 @@ class PianoViewController: UIViewController {
         placeviewsemibreve(xcoord: xpos, ycoord: 36)
     }
     
+    
+    @IBAction func D_hbtn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "D4")
+        placeviewsemibreve(xcoord: xpos, ycoord: 30)
+    }
+
+    @IBAction func E_hbtn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "E4")
+        placeviewsemibreve(xcoord: xpos, ycoord: 24)
+    }
+    
+    @IBAction func F_hbtn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "F4")
+        placeviewsemibreve(xcoord: xpos, ycoord: 18)
+    }
+    
     // place a sharp sign before these notes
     @IBAction func Csh_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "C#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        placeviewsemibreve(xcoord: xpos, ycoord: 12)
     }
     @IBAction func Dsh_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "D#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        placeviewsemibreve(xcoord: xpos, ycoord: 6)
     }
     @IBAction func Fsh_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "F#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        placeviewsemibreve(xcoord: xpos, ycoord: 0)
     }
     @IBAction func Gsh_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "G#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        placeviewsemibreve(xcoord: xpos, ycoord: -6)
     }
     
     @IBAction func Ash_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "A#")
+        placeviewsemibreve(xcoord: xpos, ycoord: -12)
+    }
+    
+    @IBAction func Csh_h_btn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "C4#")
         placeviewsemibreve(xcoord: xpos, ycoord: 36)
     }
+    
+    @IBAction func Dsh_h_btn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "D4#")
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+    }
+    
+    
+    @IBAction func Fsh_h_btn(_ sender: Any) {
+        count += 1
+        xpos = xpos+75
+        playMyFile(fname: "F4#")
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+    }
+    
+    
     
     
     // add a dictionary for the value of the notes to put a break after evry 4 beats
@@ -255,7 +361,7 @@ class PianoViewController: UIViewController {
     
     func playMyFile(fname: String) {
         
-        let path = Bundle.main.path(forResource: "sound/"+String(fname), ofType: "mp3")
+        let path = Bundle.main.path(forResource: "piano_note/"+String(fname), ofType: "wav")
         let fileURL = NSURL(fileURLWithPath: path!)
         
         do {
@@ -267,6 +373,6 @@ class PianoViewController: UIViewController {
         audioPlayer.play()
     }
     
-
-
+    
+    
 }

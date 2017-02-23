@@ -15,186 +15,122 @@ class Labelsdisp: UIView {
 //    fileprivate let arrowLayer  = CAShapeLayer()
 //    fileprivate let stableLayer = CALayer()
 //    fileprivate let turnLayer   = CALayer()
-    fileprivate let labels      = (0 ... 4).map { _ in CATextLayer() }
-    fileprivate var timer: Timer?
+    
+
+    
+    //fileprivate let labels      = (0 ... 1).map { _ in CATextLayer() }
+    //fileprivate var timer: Timer?
     
 //    var distance: Double = 0 {
 //        didSet {
 //            let angle = CGFloat(distance * M_PI)
-//            turnLayer.setAffineTransform(CGAffineTransform(rotationAngle: -angle))
+//            //turnLayer.setAffineTransform(CGAffineTransform(rotationAngle: -angle))
 //            
 //            for label in labels {
 //                label.setAffineTransform(CGAffineTransform(rotationAngle: angle))
 //            }
 //        }
 //    }
-//    
+    
     var pitch: Pitch? = nil {
         didSet {
+            let labelss = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 21))
+            labelss.center = CGPoint(x: 160, y: 285)
+            labelss.textAlignment = .center
+            labelss.textColor = .white
+
             if pitch != nil {
-                updated = 1
-                UIView.animate(withDuration: 0.2, delay: 0.0,
-                               usingSpringWithDamping: 1.0,
-                               initialSpringVelocity: 0.0,
-                               options: .curveLinear, animations: {
-                                self.alpha = 1.0
-                }, completion: nil)
+//                updated = 1
+//                UIView.animate(withDuration: 0.2, delay: 0.0,
+//                               usingSpringWithDamping: 1.0,
+//                               initialSpringVelocity: 0.0,
+//                               options: .curveLinear, animations: {
+//                                self.alpha = 1.0
+//                }, completion: nil)
+//                
+                                //labelss.fontSize = 17.0
+                labelss.text = (pitch!).description
+                //print((pitch! + 2 - 2).description)
                 
-                for (i, label) in labels.enumerated() {
-                    //label.string = (pitch! + i - 2).description
-                    print((pitch! + i - 2).description)
-                }
-            }else {
-                for label in labels {
-                    label.string = ""
-                }
-            }
+//                for (i, label) in labels.enumerated() {
+//                    label.string = (pitch! + i - 2).description
+//                    print((pitch! + 2 - 2).description)
+//                    label.string = (pitch! + i - 2).description
+//                }
+//            }else {
+//                //lebelss.text = "--"
+//                for label in labels {
+//                    label.string = ""
+//                }
+//            }
         }
+    }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        self.alpha                 = 0.5
-//        
-//        turnLayer.frame            = self.bounds
-//        self.layer.addSublayer(turnLayer)
-//        
-//        let frame                  = self.bounds.insetBy(dx: 8.0, dy: 8.0)
-//        let path                   = UIBezierPath(ovalIn: frame).cgPath
-//        let strokeColor            = UIColor.white.cgColor
-//        
-//        thinLayer.frame            = frame
-//        thinLayer.path             = path
-//        thinLayer.strokeColor      = strokeColor
-//        thinLayer.lineWidth        = 16.0
-//        thinLayer.fillColor        = UIColor.clear.cgColor
-//        thinLayer.lineDashPattern  = [ 0.5, 5.5 ]
-//        thinLayer.lineDashPhase    = 0.25
-//        turnLayer.addSublayer(thinLayer)
-//        
-//        thickLayer.frame           = frame
-//        thickLayer.path            = path
-//        thickLayer.strokeColor     = strokeColor
-//        thickLayer.lineWidth       = 16.0
-//        thickLayer.fillColor       = UIColor.clear.cgColor
-//        thickLayer.lineDashPattern = [ 1.5, 58.5 ]
-//        thickLayer.lineDashPhase   = 0.75
-//        turnLayer.addSublayer(thickLayer)
-//        
-//        let arrowPath = UIBezierPath()
-//        arrowPath.move(to: CGPoint(x: 8.0, y: 0.0))      /* Top */
-//        arrowPath.addLine(to: CGPoint(x: 16.0, y: 13.0)) /* Right */
-//        arrowPath.addLine(to: CGPoint(x: 0.0,  y: 13.0)) /* Left */
-//        arrowPath.addLine(to: CGPoint(x: 8.0,  y: 0.0))  /* Back to top */
-//        arrowPath.close()
-//        
-//        arrowLayer.frame           = CGRect(x: 0.0, y: 0.0, width: 16.0, height: 13.0)
-//        arrowLayer.path            = arrowPath.cgPath
-//        arrowLayer.fillColor       = UIColor.red.cgColor
-//        turnLayer.addSublayer(arrowLayer)
-//        
-//        stableLayer.frame           = CGRect(x: 0.0, y: -56.0, width: 5.0, height: 72.0)
-//        stableLayer.backgroundColor = thickLayer.strokeColor
-//        self.layer.addSublayer(stableLayer)
-//        
-        for (i, label) in labels.enumerated() {
-            label.frame               = CGRect(x: 0.0, y: 0.0, width: 80.0, height: 40.0)
-            label.alignmentMode       = kCAAlignmentCenter
-            label.contentsScale       = UIScreen.main.scale
-            label.foregroundColor     = UIColor.white.cgColor
-            label.font                = UIFont.systemFont(ofSize: 17, weight: UIFontWeightUltraLight)
-            label.fontSize            = 17.0
-            
-            if i == 2 {
-                label.font            = UIFont.systemFont(ofSize: 36, weight: UIFontWeightUltraLight)
-                label.fontSize       *= 2.0
-            }
-            
+      
+        
+        let labelss = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        labelss.center = CGPoint(x: 160, y: 285)
+        labelss.textAlignment = .center
+        labelss.text = "I'am a test label"
+        //self.view.addSubview(labelss)
+        
+//        for (i, label) in labels.enumerated() {
+//            label.frame               = CGRect(x: 0.0, y: 0.0, width: 80.0, height: 40.0)
+//            label.alignmentMode       = kCAAlignmentCenter
+//            label.contentsScale       = UIScreen.main.scale
+//            label.foregroundColor     = UIColor.white.cgColor
+//            label.font                = UIFont.systemFont(ofSize: 17, weight: UIFontWeightUltraLight)
+//            label.fontSize            = 17.0
+//            
+//            if i == 1 {
+//                label.font            = UIFont.systemFont(ofSize: 36, weight: UIFontWeightUltraLight)
+//                label.fontSize       *= 2.0
+//            }
+        
            // turnLayer.addSublayer(label)
-        }
+        //}
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
-    
+
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+//    
     override var frame: CGRect {
         didSet {
-//            turnLayer.frame       = self.bounds
-//            turnLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//            
-//            let frame         = self.bounds.insetBy(dx: 8.0, dy: 8.0)
-//            let path          = UIBezierPath(ovalIn: thinLayer.bounds)
-//            
-//            thinLayer.frame   = frame
-//            thinLayer.path    = path.cgPath
-//            
-//            thickLayer.frame  = frame
-//            thickLayer.path   = path.cgPath
-//            
-//            arrowLayer.frame  = CGRect(
-//                origin: CGPoint(
-//                    x: round(self.bounds.width / 2.0 - 8.0),
-//                    y: -22.0
-//                ),
-//                size:   CGSize(
-//                    width:  16.0,
-//                    height: 13.0
-//                )
-//            )
-//            stableLayer.frame = CGRect(
-//                origin: CGPoint(
-//                    x: round(self.bounds.width / 2.0 - 2.5),
-//                    y: -56.0
-//                ),
-//                size:  CGSize(
-//                    width:  5.0,
-//                    height: 72.0
-//                )
-//            )
+            
+            let labelss = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+            labelss.center = CGPoint(x: 160, y: 285)
+            labelss.textAlignment = .center
+            labelss.text = "I'am a test label"
             
             
-            for (i, label) in labels.enumerated() {
-                let offset: CGFloat = 30.0 + (i == 2 ? 50.0 : 0.0)
-                
-                let half = CGSize(width: self.bounds.width / 2.0 + offset, height: self.bounds.height / 2.0 + offset)
-                let center = CGPoint(x: half.width - half.width * sin(CGFloat(i - 5) / 6 * 2 * 3.14) - offset,
-                                     y: half.height + half.height * cos(CGFloat(i - 5) / 6 * 2 * 3.14) - offset)
-                label.frame.origin.x = center.x - label.frame.size.width / 2.0
-                label.frame.origin.y = center.y - label.frame.size.height / 2.0
-            }
+//            for (i, label) in labels.enumerated() {
+//                let offset: CGFloat = 30.0 + (i == 2 ? 50.0 : 0.0)
+//                
+//                let half = CGSize(width: self.bounds.width / 2.0 + offset, height: self.bounds.height / 2.0 + offset)
+//                let center = CGPoint(x: half.width - half.width * sin(CGFloat(i - 5) / 6 * 2 * 3.14) - offset,
+//                                     y: half.height + half.height * cos(CGFloat(i - 5) / 6 * 2 * 3.14) - offset)
+//                label.frame.origin.x = center.x - label.frame.size.width / 2.0
+//                label.frame.origin.y = center.y - label.frame.size.height / 2.0
+//            }
         }
     }
-    
+//
     override func didMoveToWindow() {
         super.didMoveToWindow()
         
-//        if self.window == nil {
-//            self.timer?.invalidate()
-//        }else {
-//            Timer.scheduledTimer(timeInterval: 1.0, target: self,
-//                                 selector: #selector(KnobView.tick),
-//                                 userInfo: nil, repeats: true)
-//        }
+
     }
-    
-    fileprivate var updated = 0
-    
-    func tick() {
-        if updated == 0 {
-            //self.distance = 0.0
-            self.pitch    = nil
-            
-            UIView.animate(withDuration: 1.0, delay: 0.0,
-                           usingSpringWithDamping: 1.0,
-                           initialSpringVelocity: 0.0,
-                           options: .curveLinear, animations: {
-                            self.alpha = 0.5
-            }, completion: nil)
-        }else {
-            updated = 0
-        }
-    }
+//
+//    fileprivate var updated = 0
+//    
 }

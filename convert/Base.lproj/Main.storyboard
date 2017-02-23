@@ -218,6 +218,14 @@
                                 <rect key="frame" x="-21" y="208" width="1066" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyS-2V-YtU">
+                                <rect key="frame" x="735" y="456" width="68" height="304"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="D_hbtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hjy-4D-c2n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -228,7 +236,7 @@
                         <outlet property="Ash" destination="2Je-ZP-jEg" id="jml-NJ-zEE"/>
                         <outlet property="B" destination="gA2-7J-VWi" id="mbH-tv-hvo"/>
                         <outlet property="C" destination="ZNx-FL-jgk" id="Gvn-ym-6Jt"/>
-                        <outlet property="C_h" destination="fRT-lf-X48" id="UHa-JT-A3v"/>
+                        <outlet property="C_h" destination="fRT-lf-X48" id="yuv-7x-jjR"/>
                         <outlet property="Csh" destination="RmO-N2-2Ws" id="e8W-iQ-8RG"/>
                         <outlet property="D" destination="WJq-KJ-DeA" id="KUX-wg-eYt"/>
                         <outlet property="Dsh" destination="CFH-b7-wbw" id="K6i-g1-NXJ"/>

@@ -14,7 +14,7 @@ class ViewController: UIViewController, TunerDelegate {
     
     let tuner       = Tuner()
     let displayView = DisplayView()
-    let knobView    = Labelsdisp(frame: CGRect(x: 0, y: 0, width: 245, height: 245))
+
     
     
     
@@ -39,19 +39,18 @@ class ViewController: UIViewController, TunerDelegate {
         btn.tag = 1
         self.view.addSubview(btn)
         
-        /* Setup the knob view. */
-        knobView.frame = CGRect(
-            origin: CGPoint(x: round(self.view.bounds.width - 245) / 2,
-                            y: round(self.view.bounds.height - 245) / 2),
-            size:   CGSize(width: 245, height: 245)
-        )
-        self.view.addSubview(knobView)
+        let labelss = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 21))
+        labelss.center = CGPoint(x: 160, y: 285)
+        labelss.textAlignment = .center
+        labelss.textColor = .white
+
+        
         
         /* Start the tuner. */
         tuner.delegate = self
         tuner.startMonitoring()
         
-//        print("\(tuner.responds(to: self))")
+        
     }
     
     func buttonAction(sender: UIButton!) {
@@ -72,21 +71,24 @@ class ViewController: UIViewController, TunerDelegate {
         displayView.amplitude = min(1.0, amplitude * 25.0)
         displayView.frequency = pitch.frequency
         
-        if amplitude < 0.01 {
+        if amplitude < 0.02 {
             return
         }
         
-        knobView.pitch = pitch
+//        knobView.pitch = pitch
+        
+        print(pitch.description)
+        
         
         /* Calculate the difference between the nearest pitch and the second
          * nearest pitch to express the distance in a percentage. */
-        let previous   = pitch - 1
-        let next       = pitch + 1
-        let difference = distance < 0 ?
-            (pitch.frequency - previous.frequency) :
-            (next.frequency  - pitch.frequency)
-        
-        //knobView.distance = distance / difference / 2.0
+//        let previous   = pitch - 1
+//        let next       = pitch + 1
+//        let difference = distance < 0 ?
+//            (pitch.frequency - previous.frequency) :
+//            (next.frequency  - pitch.frequency)
+//        
+       //n knobView.distance = distance / difference / 2.0
     }
     
     override func didReceiveMemoryWarning() {
