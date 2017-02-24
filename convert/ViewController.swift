@@ -15,6 +15,7 @@ class ViewController: UIViewController, TunerDelegate {
     let tuner       = Tuner()
     let displayView = DisplayView()
 
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     
     
     
@@ -39,10 +40,15 @@ class ViewController: UIViewController, TunerDelegate {
         btn.tag = 1
         self.view.addSubview(btn)
         
-        let labelss = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 21))
-        labelss.center = CGPoint(x: 160, y: 285)
-        labelss.textAlignment = .center
-        labelss.textColor = .white
+
+        label.center = CGPoint(x: round(self.view.bounds.width)  / 2,
+                               y: round(self.view.bounds.width-350)  / 2)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.font = UIFont(name: "HelveticaNeue", size: CGFloat(50))
+        label.text = "--"
+        self.view.addSubview(label)
+
 
         
         
@@ -77,7 +83,12 @@ class ViewController: UIViewController, TunerDelegate {
         
 //        knobView.pitch = pitch
         
-        print(pitch.description)
+
+        label.text = "\(pitch.description)"
+        
+        for i in 1...3{
+        print((pitch+i-2).description)
+        }
         
         
         /* Calculate the difference between the nearest pitch and the second
