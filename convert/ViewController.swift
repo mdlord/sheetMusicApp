@@ -16,6 +16,11 @@ class ViewController: UIViewController, TunerDelegate {
     let displayView = DisplayView()
 
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    var tunerstart = false
+    
+    let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
+    let startbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 600, width: 100, height: 50))
+    
     
     
     
@@ -24,6 +29,7 @@ class ViewController: UIViewController, TunerDelegate {
         
         /* Update the background color. */
         self.view.backgroundColor = .black
+        title = "Tuner".uppercased()
         
         /* Setup the display view. */
         displayView.frame = CGRect(
@@ -33,7 +39,6 @@ class ViewController: UIViewController, TunerDelegate {
         )
         self.view.addSubview(displayView)
         
-        let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
         btn.backgroundColor = UIColor.red
         btn.setTitle("Piano", for: .normal)
         btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
@@ -49,18 +54,44 @@ class ViewController: UIViewController, TunerDelegate {
         label.text = "--"
         self.view.addSubview(label)
 
-
         
+        startbtn.backgroundColor = UIColor.green
+        startbtn.setTitle("Start", for: .normal)
+        startbtn.addTarget(self, action: #selector(startbuttonAction), for: .touchUpInside)
+        //startbtn.tag = 1
+        self.view.addSubview(startbtn)
         
-        /* Start the tuner. */
-        tuner.delegate = self
-        tuner.startMonitoring()
-        
+      
         
     }
     
+    
+    //-------------------------------------------------------
+    func startbuttonAction(_sender: UIButton) {
+      
+        tuner.delegate = self
+        if tunerstart == false{
+            tuner.startMonitoring()
+            tunerstart = true
+            startbtn.setTitle("Stop", for: .normal)
+            startbtn.backgroundColor = UIColor.red
+            
+        }
+        else{
+            tunerstart = false
+            tuner.stopMonitoring()
+            startbtn.setTitle("Start", for: .normal)
+            startbtn.backgroundColor = UIColor.green
+            label.text = "--"
+            
+        }
+        
+    }
+
+    //------------------------------------------------
+    
     func buttonAction(sender: UIButton!) {
-        var btnsendtag: UIButton = sender
+        let btnsendtag: UIButton = sender
         if btnsendtag.tag == 1 {
             print("Piano")
             self.performSegue(withIdentifier: "PianoSegue", sender: self)
