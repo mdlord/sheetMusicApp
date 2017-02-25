@@ -328,6 +328,7 @@
 				TargetAttributes = {
 					BE1DD1661E3C351200C683B7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZFBE39U585;
 						ProvisioningStyle = Automatic;
 					};
 					BE1DD17A1E3C351200C683B7 = {
@@ -704,9 +705,10 @@
 			baseConfigurationReference = 51B283EA61B919E12C4DCFDD /* Pods-convert.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZFBE39U585;
 				INFOPLIST_FILE = convert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.convert";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -717,9 +719,10 @@
 			baseConfigurationReference = AEABBE76D0A5D3500D0C84B8 /* Pods-convert.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZFBE39U585;
 				INFOPLIST_FILE = convert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.convert";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

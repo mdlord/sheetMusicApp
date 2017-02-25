@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="cM6-K1-zQZ">
             <objects>
-                <viewController id="qty-CM-h8e" sceneMemberID="viewController">
+                <viewController id="qty-CM-h8e" customClass="ViewController" customModule="convert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P0g-MO-08C"/>
                         <viewControllerLayoutGuide type="bottom" id="bta-xd-5Ot"/>
