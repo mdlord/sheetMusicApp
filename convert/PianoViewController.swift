@@ -45,62 +45,7 @@ class PianoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        C.backgroundColor = .clear
-        C.layer.cornerRadius = 1
-        C.layer.borderWidth = 1
-        C.layer.borderColor = UIColor.black.cgColor
-        
-        D.backgroundColor = .clear
-        D.layer.cornerRadius = 1
-        D.layer.borderWidth = 1
-        D.layer.borderColor = UIColor.black.cgColor
-        
-        E.backgroundColor = .clear
-        E.layer.cornerRadius = 1
-        E.layer.borderWidth = 1
-        E.layer.borderColor = UIColor.black.cgColor
-        
-        F.backgroundColor = .clear
-        F.layer.cornerRadius = 1
-        F.layer.borderWidth = 1
-        F.layer.borderColor = UIColor.black.cgColor
-        
-        G.backgroundColor = .clear
-        G.layer.cornerRadius = 1
-        G.layer.borderWidth = 1
-        G.layer.borderColor = UIColor.black.cgColor
-        
-        A.backgroundColor = .clear
-        A.layer.cornerRadius = 1
-        A.layer.borderWidth = 1
-        A.layer.borderColor = UIColor.black.cgColor
-        
-        B.backgroundColor = .clear
-        B.layer.cornerRadius = 1
-        B.layer.borderWidth = 1
-        B.layer.borderColor = UIColor.black.cgColor
-        
-        C_h.backgroundColor = .clear
-        C_h.layer.cornerRadius = 1
-        C_h.layer.borderWidth = 1
-        C_h.layer.borderColor = UIColor.black.cgColor
-        
-        D_h.backgroundColor = .clear
-        D_h.layer.cornerRadius = 1
-        D_h.layer.borderWidth = 1
-        D_h.layer.borderColor = UIColor.black.cgColor
-        
-        E_h.backgroundColor = .clear
-        E_h.layer.cornerRadius = 1
-        E_h.layer.borderWidth = 1
-        E_h.layer.borderColor = UIColor.black.cgColor
-        
-        F_h.backgroundColor = .clear
-        F_h.layer.cornerRadius = 1
-        F_h.layer.borderWidth = 1
-        F_h.layer.borderColor = UIColor.black.cgColor
-        
-        
+
         
     }
     
@@ -136,13 +81,14 @@ class PianoViewController: UIViewController {
     // F_h= 30
     
     
-    
-    @IBAction func Cbtn(_ sender: Any) {
+    @IBAction func Cbtn(_ sender: AnyObject) {
         playMyFile(fname: "C")
         count += 1
         xpos = xpos+75
         placeviewsemibreve(xcoord: xpos, ycoord: 78)
     }
+    
+   
     @IBAction func Dbtn(_ sender: Any) {
         count += 1
         xpos = xpos+75
@@ -183,7 +129,7 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "C4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        placeviewsemibreve(xcoord: xpos, ycoord: 78)
     }
     
     
@@ -191,22 +137,23 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "D4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 30)
+        placeviewsemibreve(xcoord: xpos, ycoord: 42)
     }
 
-    @IBAction func E_hbtn(_ sender: Any) {
+    @IBAction func E_hbtn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "E4")
         placeviewsemibreve(xcoord: xpos, ycoord: 24)
     }
     
-    @IBAction func F_hbtn(_ sender: Any) {
+    @IBAction func F_hbtn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "F4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 18)
+        placeviewsemibreve(xcoord: xpos, ycoord: 30)
     }
+ 
     
     // place a sharp sign before these notes
     @IBAction func Csh_btn(_ sender: Any) {
@@ -241,27 +188,29 @@ class PianoViewController: UIViewController {
         placeviewsemibreve(xcoord: xpos, ycoord: -12)
     }
     
-    @IBAction func Csh_h_btn(_ sender: Any) {
+    @IBAction func Csh_h_btn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "C4#")
         placeviewsemibreve(xcoord: xpos, ycoord: 36)
     }
+   
     
-    @IBAction func Dsh_h_btn(_ sender: Any) {
+    @IBAction func Dsh_h_btn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "D4#")
         placeviewsemibreve(xcoord: xpos, ycoord: 36)
     }
+
     
-    
-    @IBAction func Fsh_h_btn(_ sender: Any) {
+    @IBAction func Fsh_h_btn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "F4#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        placeviewsemibreve(xcoord: xpos, ycoord: 30)
     }
+
     
     
     
@@ -361,7 +310,7 @@ class PianoViewController: UIViewController {
     
     func playMyFile(fname: String) {
         
-        let path = Bundle.main.path(forResource: "piano_note/"+String(fname), ofType: "wav")
+        let path = Bundle.main.path(forResource: String(fname), ofType: "wav")
         let fileURL = NSURL(fileURLWithPath: path!)
         
         do {

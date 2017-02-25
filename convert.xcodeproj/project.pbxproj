@@ -11,19 +11,15 @@
 		925263FF8FA5D732E8551F60 /* Pods_convertUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6D237ACC1088E44CF748BE /* Pods_convertUITests.framework */; };
 		BE1DD16B1E3C351200C683B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD16A1E3C351200C683B7 /* AppDelegate.swift */; };
 		BE1DD16D1E3C351200C683B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD16C1E3C351200C683B7 /* ViewController.swift */; };
-		BE1DD1701E3C351200C683B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD16E1E3C351200C683B7 /* Main.storyboard */; };
 		BE1DD1721E3C351200C683B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD1711E3C351200C683B7 /* Assets.xcassets */; };
 		BE1DD1751E3C351200C683B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */; };
 		BE1DD1801E3C351200C683B7 /* convertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD17F1E3C351200C683B7 /* convertTests.swift */; };
 		BE1DD18B1E3C351200C683B7 /* convertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DD18A1E3C351200C683B7 /* convertUITests.swift */; };
 		BE6D75641E5B42000052E717 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75631E5B42000052E717 /* PlotView.swift */; };
 		BE6D75661E5B43530052E717 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75651E5B43530052E717 /* DisplayView.swift */; };
-		BE6D75681E5B45930052E717 /* PianoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75671E5B45930052E717 /* PianoViewController.swift */; };
 		BE6D756A1E5B5EDD0052E717 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75691E5B5EDD0052E717 /* Pitch.swift */; };
 		BE6D756C1E5B5F730052E717 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D756B1E5B5F730052E717 /* Note.swift */; };
 		BE6D756E1E5B622A0052E717 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D756D1E5B622A0052E717 /* Tuner.swift */; };
-		BE6D75731E5D45BA0052E717 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD16E1E3C351200C683B7 /* Main.storyboard */; };
-		BE6D75741E5D45BC0052E717 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1DD16E1E3C351200C683B7 /* Main.storyboard */; };
 		BE6D75771E5D45FA0052E717 /* mantavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75711E5D3F470052E717 /* mantavViewController.swift */; };
 		BE6D758E1E6210140052E717 /* A#.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE6D757B1E6210140052E717 /* A#.wav */; };
 		BE6D758F1E6210140052E717 /* A.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE6D757C1E6210140052E717 /* A.wav */; };
@@ -44,6 +40,8 @@
 		BE6D759E1E6210140052E717 /* F4.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE6D758B1E6210140052E717 /* F4.wav */; };
 		BE6D759F1E6210140052E717 /* G#.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE6D758C1E6210140052E717 /* G#.wav */; };
 		BE6D75A01E6210140052E717 /* G.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE6D758D1E6210140052E717 /* G.wav */; };
+		BE6D75A21E622E7F0052E717 /* PianoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75A11E622E7F0052E717 /* PianoViewController.swift */; };
+		BE6D75A41E622E9C0052E717 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6D75A31E622E9B0052E717 /* Main.storyboard */; };
 		D07C870A9BB531D1392C2974 /* Pods_convert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD762E3FE5CDE0636603B0A /* Pods_convert.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +75,6 @@
 		BE1DD1671E3C351200C683B7 /* convert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = convert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1DD16A1E3C351200C683B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE1DD16C1E3C351200C683B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE1DD16F1E3C351200C683B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE1DD1711E3C351200C683B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE1DD1741E3C351200C683B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE1DD1761E3C351200C683B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,7 +86,6 @@
 		BE1DD18C1E3C351200C683B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6D75631E5B42000052E717 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
 		BE6D75651E5B43530052E717 /* DisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
-		BE6D75671E5B45930052E717 /* PianoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoViewController.swift; sourceTree = "<group>"; };
 		BE6D75691E5B5EDD0052E717 /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
 		BE6D756B1E5B5F730052E717 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		BE6D756D1E5B622A0052E717 /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
@@ -113,6 +109,8 @@
 		BE6D758B1E6210140052E717 /* F4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F4.wav; sourceTree = "<group>"; };
 		BE6D758C1E6210140052E717 /* G#.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "G#.wav"; sourceTree = "<group>"; };
 		BE6D758D1E6210140052E717 /* G.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = G.wav; sourceTree = "<group>"; };
+		BE6D75A11E622E7F0052E717 /* PianoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoViewController.swift; sourceTree = "<group>"; };
+		BE6D75A31E622E9B0052E717 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				BE1DD16A1E3C351200C683B7 /* AppDelegate.swift */,
-				BE6D75671E5B45930052E717 /* PianoViewController.swift */,
-				BE1DD16E1E3C351200C683B7 /* Main.storyboard */,
+				BE6D75A11E622E7F0052E717 /* PianoViewController.swift */,
+				BE6D75A31E622E9B0052E717 /* Main.storyboard */,
 				BE1DD1711E3C351200C683B7 /* Assets.xcassets */,
 				BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */,
 				BE1DD1761E3C351200C683B7 /* Info.plist */,
@@ -374,6 +372,7 @@
 				BE6D759A1E6210140052E717 /* E4.wav in Resources */,
 				BE6D759B1E6210140052E717 /* F#.wav in Resources */,
 				BE6D75A01E6210140052E717 /* G.wav in Resources */,
+				BE6D75A41E622E9C0052E717 /* Main.storyboard in Resources */,
 				BE6D75981E6210140052E717 /* D4.wav in Resources */,
 				BE6D75911E6210140052E717 /* C#.wav in Resources */,
 				BE6D75961E6210140052E717 /* D.wav in Resources */,
@@ -390,7 +389,6 @@
 				BE6D75941E6210140052E717 /* C4.wav in Resources */,
 				BE1DD1721E3C351200C683B7 /* Assets.xcassets in Resources */,
 				BE6D75971E6210140052E717 /* D4#.wav in Resources */,
-				BE1DD1701E3C351200C683B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +396,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6D75731E5D45BA0052E717 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +403,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6D75741E5D45BC0052E717 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,8 +557,8 @@
 				BE1DD16B1E3C351200C683B7 /* AppDelegate.swift in Sources */,
 				BE6D756C1E5B5F730052E717 /* Note.swift in Sources */,
 				BE6D75661E5B43530052E717 /* DisplayView.swift in Sources */,
-				BE6D75681E5B45930052E717 /* PianoViewController.swift in Sources */,
 				BE6D75771E5D45FA0052E717 /* mantavViewController.swift in Sources */,
+				BE6D75A21E622E7F0052E717 /* PianoViewController.swift in Sources */,
 				BE6D75641E5B42000052E717 /* PlotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,14 +595,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BE1DD16E1E3C351200C683B7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE1DD16F1E3C351200C683B7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
