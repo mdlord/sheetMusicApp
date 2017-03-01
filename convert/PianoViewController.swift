@@ -129,7 +129,7 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "C4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 78)
+        placeviewsemibreve(xcoord: xpos, ycoord: 36)
     }
     
     
@@ -137,7 +137,7 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "D4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 42)
+        placeviewsemibreve(xcoord: xpos, ycoord: 30)
     }
 
     @IBAction func E_hbtn(_ sender: AnyObject) {
@@ -151,7 +151,7 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "F4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 30)
+        placeviewsemibreve(xcoord: xpos, ycoord: 18)
     }
  
     
@@ -159,56 +159,80 @@ class PianoViewController: UIViewController {
     @IBAction func Csh_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
+        placeviewsemibreve(xcoord: xpos, ycoord: 78)
+        xpos = xpos-20
         playMyFile(fname: "C#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 12)
+        placeviewsharp(xcoord: xpos, ycoord: 90)
+        xpos=xpos+20
     }
     @IBAction func Dsh_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
+        placeviewsemibreve(xcoord: xpos, ycoord: 72)
+        xpos = xpos-20
         playMyFile(fname: "D#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 6)
+        placeviewsharp(xcoord: xpos, ycoord: 84)
+        xpos=xpos+20
     }
     @IBAction func Fsh_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
+        placeviewsemibreve(xcoord: xpos, ycoord: Int(60))
+        xpos = xpos-20
         playMyFile(fname: "F#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 0)
+        placeviewsharp(xcoord: xpos, ycoord: 72)
+        xpos=xpos+20
     }
     @IBAction func Gsh_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
+        placeviewsemibreve(xcoord: xpos, ycoord: 54)
+        xpos = xpos-20
         playMyFile(fname: "G#")
-        placeviewsemibreve(xcoord: xpos, ycoord: -6)
+        placeviewsharp(xcoord: xpos, ycoord: 66)
+        xpos=xpos+20
     }
     
     @IBAction func Ash_btn(_ sender: Any) {
         count += 1
         xpos = xpos+75
+        placeviewsemibreve(xcoord: xpos, ycoord: 48)
+        xpos = xpos-20
         playMyFile(fname: "A#")
-        placeviewsemibreve(xcoord: xpos, ycoord: -12)
+        placeviewsharp(xcoord: xpos, ycoord: 60)
+        xpos=xpos+20
     }
     
     @IBAction func Csh_h_btn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
-        playMyFile(fname: "C4#")
         placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        xpos = xpos-20
+        playMyFile(fname: "C4#")
+        placeviewsharp(xcoord: xpos, ycoord: 48)
+        xpos=xpos+20
     }
    
     
     @IBAction func Dsh_h_btn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
+        placeviewsemibreve(xcoord: xpos, ycoord: 30)
+        xpos = xpos-20
         playMyFile(fname: "D4#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        placeviewsharp(xcoord: xpos, ycoord: 42)
+        xpos = xpos+20
     }
 
     
     @IBAction func Fsh_h_btn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
+        placeviewsemibreve(xcoord: xpos, ycoord: 18)
+        xpos = xpos - 20
         playMyFile(fname: "F4#")
-        placeviewsemibreve(xcoord: xpos, ycoord: 30)
+        placeviewsharp(xcoord: xpos, ycoord: 30)
+        xpos=xpos+20
     }
 
     
@@ -258,7 +282,7 @@ class PianoViewController: UIViewController {
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
         imageView.contentMode = .scaleAspectFill
-        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 20, height: 35)
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 20, height: 20)
         
         if count<15{
             staffone.addSubview(imageView)
