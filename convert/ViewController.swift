@@ -19,7 +19,7 @@ class ViewController: UIViewController, TunerDelegate {
     var tunerstart = false
     
     let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
-    let startbtn: UIButton = UIButton(frame: CGRect(x: 100, y: 600, width: 100, height: 50))
+    let startbtn: UIButton = UIButton(frame: CGRect(x: 800, y: 700, width: 200, height: 50))
     
     
     
@@ -37,15 +37,26 @@ class ViewController: UIViewController, TunerDelegate {
                             y: round(self.view.bounds.height - 300) / 1),
             size:   CGSize(width: 450, height: 170)
         )
+        
+        
         self.view.addSubview(displayView)
         
-        btn.backgroundColor = UIColor.red
+        btn.backgroundColor = UIColor(red: 117/255, green: 117/277, blue: 145/255, alpha: 0.5)
         btn.setTitle("Piano", for: .normal)
+        btn.layer.cornerRadius = 20;
         btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         btn.tag = 1
         self.view.addSubview(btn)
         
-
+        
+        startbtn.backgroundColor = UIColor(red: 166/255, green: 36/255, blue: 43/255, alpha: 0.5)
+        startbtn.setTitle("Start", for: .normal)
+        startbtn.layer.cornerRadius = 20
+        startbtn.addTarget(self, action: #selector(startbuttonAction), for: .touchUpInside)
+        //startbtn.tag = 1
+        self.view.addSubview(startbtn)
+        
+        
         label.center = CGPoint(x: round(self.view.bounds.width)  / 2,
                                y: round(self.view.bounds.width-350)  / 2)
         label.textAlignment = .center
@@ -53,13 +64,6 @@ class ViewController: UIViewController, TunerDelegate {
         label.font = UIFont(name: "HelveticaNeue", size: CGFloat(50))
         label.text = "--"
         self.view.addSubview(label)
-
-        
-        startbtn.backgroundColor = UIColor.green
-        startbtn.setTitle("Start", for: .normal)
-        startbtn.addTarget(self, action: #selector(startbuttonAction), for: .touchUpInside)
-        //startbtn.tag = 1
-        self.view.addSubview(startbtn)
         
       
         
@@ -74,14 +78,14 @@ class ViewController: UIViewController, TunerDelegate {
             tuner.startMonitoring()
             tunerstart = true
             startbtn.setTitle("Stop", for: .normal)
-            startbtn.backgroundColor = UIColor.red
+            startbtn.backgroundColor = UIColor(red: 166/255, green: 36/255, blue: 43/255, alpha: 0.5)
             
         }
         else{
             tunerstart = false
             tuner.stopMonitoring()
             startbtn.setTitle("Start", for: .normal)
-            startbtn.backgroundColor = UIColor.green
+            startbtn.backgroundColor = UIColor(red: 86/255, green: 159/255, blue: 73/255, alpha: 0.5)
             label.text = "--"
             
         }

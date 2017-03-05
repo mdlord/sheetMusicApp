@@ -79,9 +79,40 @@ class PianoViewController: UIViewController {
     // B  = 42                  difference  = 12
     // D_h= 38
     // F_h= 30
+   // var lpgr = UILongPressGestureRecognizer(target: self, action: Selector("action:"))
     
+   // lpgr.minimumPressDuration = 2.0;
+    
+   // mapView.addGestureRecognizer(lpgr)
     
     @IBAction func Cbtn(_ sender: AnyObject) {
+        //let timeAtPress = NSDate()
+        //let elapsed = Date().timeIntervalSince(timeAtPress as Date)
+        //print(elapsed)
+        //var longPressBeginTime: TimeInterval
+        let sender: UILongPressGestureRecognizer =
+            UILongPressGestureRecognizer(target: self, action: Selector(("longPressed:")))
+            sender.minimumPressDuration = 0.2
+      
+            if (sender.state == UIGestureRecognizerState.ended)
+            {
+                //let gestureTime = NSDate.timeIntervalSinceReferenceDate - longPressBeginTime + gesture.minimumPressDuration
+                print("end")
+            }
+            else if (sender.state == UIGestureRecognizerState.began)
+            {
+                print("Began")
+                //longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            }
+                /*if sender.state == UIGestureRecognizerState.began
+        {
+            let alertController = UIAlertController(title: nil, message:
+                "Long-Press Gesture Detected", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }*/
+    
         playMyFile(fname: "C")
         count += 1
         xpos = xpos+75
@@ -345,6 +376,9 @@ class PianoViewController: UIViewController {
         audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
+    
+    //func action(gestureRecognizer:UIGestureRecognizer) { println("long press") }
+    
     
     
     
