@@ -10,6 +10,11 @@ import UIKit
 import AVFoundation
 
 class PianoViewController: UIViewController {
+    var x=1 //D
+    var y=1 //E
+    var z=1 //F
+    var g1=1 //G
+    var a1=1 //A
     
     @IBOutlet weak var staffone: UIImageView!
     @IBOutlet weak var stafftwo: UIImageView!
@@ -124,31 +129,104 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "D")
-        placeviewsemibreve(xcoord: xpos, ycoord: 72)
+        if x==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(72))
+            x=x+1
+        }
+        else if x==2{
+            placeviewhalf(xcoord: xpos, ycoord: Int(51))
+            x=x+1
+        }
+        else if x==3{
+            placeviewquartet(xcoord: xpos, ycoord: 49)
+            x=x+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 48)
+        }
     }
     @IBAction func Ebtn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "E")
+        if y==1{
         placeviewsemibreve(xcoord: xpos, ycoord: Int(66))
+        y=y+1
+        }
+        else if y==2{
+        placeviewhalf(xcoord: xpos, ycoord: Int(45))
+            y=y+1
+        }
+        else if y==3{
+            placeviewquartet(xcoord: xpos, ycoord: 43)
+            y=y+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 42)
+        }
     }
     @IBAction func Fbtn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "F")
-        placeviewsemibreve(xcoord: xpos, ycoord: Int(60))
+        //placeviewsemibreve(xcoord: xpos, ycoord: Int(60))
+        if z==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(60))
+            z=z+1
+        }
+        else if z==2{
+            placeviewhalf(xcoord: xpos, ycoord: Int(39))
+            z=z+1
+        }
+        else if z==3{
+            placeviewquartet(xcoord: xpos, ycoord: 37)
+            z=z+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 36)
+        }
+
+        
     }
     @IBAction func Gbtn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "G")
-        placeviewsemibreve(xcoord: xpos, ycoord: 54)
+        if g1==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(54))
+            g1=g1+1
+        }
+        else if g1==2{
+            placeviewhalf(xcoord: xpos, ycoord: Int(33))
+            g1=g1+1
+        }
+        else if g1==3{
+            placeviewquartet(xcoord: xpos, ycoord: 31)
+            g1=g1+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 30)
+        }
     }
     @IBAction func Abtn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "A")
-        placeviewsemibreve(xcoord: xpos, ycoord: 48)
+        if a1==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(48))
+            a1=a1+1
+        }
+        else if a1==2{
+            placeviewhalf(xcoord: xpos, ycoord: Int(27))
+            a1=a1+1
+        }
+        else if a1==3{
+            placeviewquartet(xcoord: xpos, ycoord: 25)
+            a1=a1+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 24)
+        }
     }
     @IBAction func Bbtn(_ sender: Any) {
         count += 1
@@ -282,8 +360,10 @@ class PianoViewController: UIViewController {
                    0.5: "quaver"]
     
     // add a new parameter to change the staff if count% 10 == 0
-    
     // whole note function
+    
+    
+    //full note
     func placeviewsemibreve(xcoord:Int, ycoord: Int)
     {
         let imageName = "semibreve(25).png"
@@ -307,6 +387,28 @@ class PianoViewController: UIViewController {
         }
     }
     
+    //Flat symbol
+    func placeviewflat(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "flat_note(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 45)
+        
+        if count<15{
+            staffone.addSubview(imageView)
+        }
+        else if count<30{
+            count = 1
+            stafftwo.addSubview(imageView)
+        }
+        else{
+            print("take screenshot and remove subviews")
+        }
+    }
+    
+    //Sharp symbol
     func placeviewsharp(xcoord:Int, ycoord: Int)
     {
         let imageName = "sharp25.png"
@@ -341,14 +443,15 @@ class PianoViewController: UIViewController {
     // write function for half note(find pic too)
     // write function for one eigth note(find pic too)
     //
+    //quarternote
     
     func placeviewquartet(xcoord:Int, ycoord: Int)
     {
-        let imageName = "quartet25.png"
+        let imageName = "quarter_note(25).png"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
-        imageView.contentMode = .scaleAspectFill
-        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 45)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
         
         if count<15{
             staffone.addSubview(imageView)
@@ -361,8 +464,48 @@ class PianoViewController: UIViewController {
             print("take screenshot and remove subviews")
         }
     }
-    
-    
+   
+    //Eighth note
+    func placevieweight(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "eighth_note(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 57)
+        
+        if count<15{
+            staffone.addSubview(imageView)
+        }
+        else if count<30{
+            count = 1
+            stafftwo.addSubview(imageView)
+        }
+        else{
+            print("take screenshot and remove subviews")
+        }
+    }
+    //Half note
+    func placeviewhalf(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "half_note(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
+        
+        if count<15{
+            staffone.addSubview(imageView)
+        }
+        else if count<30{
+            count = 1
+            stafftwo.addSubview(imageView)
+        }
+        else{
+            print("take screenshot and remove subviews")
+        }
+    }
+    //Play the file
     func playMyFile(fname: String) {
         
         let path = Bundle.main.path(forResource: String(fname), ofType: "wav")
