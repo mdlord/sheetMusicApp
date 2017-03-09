@@ -21,8 +21,7 @@ class ViewController: UIViewController, TunerDelegate {
     let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
     let startbtn: UIButton = UIButton(frame: CGRect(x: 800, y: 700, width: 200, height: 50))
     
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
