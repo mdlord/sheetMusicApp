@@ -15,6 +15,11 @@ class PianoViewController: UIViewController {
     var z=1 //F
     var g1=1 //G
     var a1=1 //A
+    var b1=1 //B
+    var ch1=1 //Ch
+    var dh1=1 //Dh
+    var eh1=1 //Eh
+    var fh1=1 //Fh
     
     @IBOutlet weak var staffone: UIImageView!
     @IBOutlet weak var stafftwo: UIImageView!
@@ -232,13 +237,41 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "B")
-        placeviewsemibreve(xcoord: xpos, ycoord: 42)
+        if b1==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(42))
+            b1=b1+1
+        }
+        else if b1==2{
+            placeviewhalf(xcoord: xpos, ycoord: Int(21))
+            b1=b1+1
+        }
+        else if a1==3{
+            placeviewquartet(xcoord: xpos, ycoord: 19)
+            b1=b1+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 18)
+        }
     }
     @IBAction func C_hbtn(_ sender: Any) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "C4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 36)
+        if ch1==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(36))
+            ch1=ch1+1
+        }
+        else if ch1==2{
+            placeviewinverthalf(xcoord: xpos, ycoord: Int(51))
+            ch1=ch1+1
+        }
+        else if ch1==3{
+            placeviewinvertquartet(xcoord: xpos, ycoord: 49)
+            ch1=ch1+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 18)
+        }
     }
     
     
@@ -246,21 +279,63 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "D4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 30)
+        if dh1==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(30))
+            dh1=dh1+1
+        }
+        else if dh1==2{
+            placeviewinverthalf(xcoord: xpos, ycoord: Int(45))
+            dh1=dh1+1
+        }
+        else if dh1==3{
+            placeviewinvertquartet(xcoord: xpos, ycoord: 43)
+            dh1=dh1+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 18)
+        }
     }
 
     @IBAction func E_hbtn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "E4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 24)
+        if eh1==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(24))
+            eh1=eh1+1
+        }
+        else if eh1==2{
+            placeviewinverthalf(xcoord: xpos, ycoord: Int(39))
+            eh1=eh1+1
+        }
+        else if eh1==3{
+            placeviewinvertquartet(xcoord: xpos, ycoord: 37)
+            eh1=eh1+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 18)
+        }
     }
     
     @IBAction func F_hbtn(_ sender: AnyObject) {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "F4")
-        placeviewsemibreve(xcoord: xpos, ycoord: 18)
+        if fh1==1{
+            placeviewsemibreve(xcoord: xpos, ycoord: Int(18))
+            fh1=fh1+1
+        }
+        else if fh1==2{
+            placeviewinverthalf(xcoord: xpos, ycoord: Int(33))
+            fh1=fh1+1
+        }
+        else if fh1==3{
+            placeviewinvertquartet(xcoord: xpos, ycoord: 31)
+            fh1=fh1+1
+        }
+        else{
+            placevieweight(xcoord: xpos, ycoord: 18)
+        }
     }
  
     
@@ -493,6 +568,46 @@ class PianoViewController: UIViewController {
         let imageView = UIImageView(image: image!)
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
+        
+        if count<15{
+            staffone.addSubview(imageView)
+        }
+        else if count<30{
+            count = 1
+            stafftwo.addSubview(imageView)
+        }
+        else{
+            print("take screenshot and remove subviews")
+        }
+    }
+    
+    func placeviewinverthalf(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "half_note_inv(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
+        
+        if count<15{
+            staffone.addSubview(imageView)
+        }
+        else if count<30{
+            count = 1
+            stafftwo.addSubview(imageView)
+        }
+        else{
+            print("take screenshot and remove subviews")
+        }
+    }
+    
+    func placeviewinvertquartet(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "quarter_note_inv(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
         
         if count<15{
             staffone.addSubview(imageView)
