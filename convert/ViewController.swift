@@ -85,6 +85,13 @@ class ViewController: UIViewController, TunerDelegate {
  
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first{
+            let position = touch.location(in: self.view)
+//            print(position.x)
+//            print(position.y)
+        }
+    }
     //-------------------------------------------------------
     
     func startbuttonAction(_sender: UIButton) {
@@ -133,8 +140,8 @@ class ViewController: UIViewController, TunerDelegate {
         }
         
 //        knobView.pitch = pitch
-        label.text = "\(pitch.description)"
-//        placenotes(String(pitch.description))
+//        label.text = "\(pitch.description)"
+        placenotes(input: String(pitch.description))
      
     }
     
@@ -142,6 +149,19 @@ class ViewController: UIViewController, TunerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }
+
+
+
+func placenotes(input: String){
+
+    print(input)
+    
+    
+    
+
+    
+    
+}
+
 

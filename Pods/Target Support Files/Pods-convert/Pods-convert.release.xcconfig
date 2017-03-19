@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AudioKit" "$PODS_CONFIGURATION_BUILD_DIR/Beethoven" "$PODS_CONFIGURATION_BUILD_DIR/Cartography" "$PODS_CONFIGURATION_BUILD_DIR/Hue" "$PODS_CONFIGURATION_BUILD_DIR/Pitchy"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AudioKit" "$PODS_CONFIGURATION_BUILD_DIR/Buckets"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/AudioKit/AudioKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Beethoven/Beethoven.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Cartography/Cartography.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Hue/Hue.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Pitchy/Pitchy.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "AudioKit" -framework "Beethoven" -framework "Cartography" -framework "Hue" -framework "Pitchy"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/AudioKit/AudioKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Buckets/Buckets.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "AudioKit" -framework "Buckets"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

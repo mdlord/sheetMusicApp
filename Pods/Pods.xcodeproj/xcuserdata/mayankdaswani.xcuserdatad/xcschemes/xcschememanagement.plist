@@ -9,22 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Beethoven.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Cartography.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Hue.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pitchy.xcscheme</key>
+		<key>Buckets.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,32 +37,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>478DF72444EB9E71BB0B0C848874B152</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>544212980401A6DA7806F65EAD8C6637</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6BC3E8FBAD56AD03A1F952B604615D34</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>800F39573EA188EF47EAF7DCF2B5E7B5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B2542602E50EDF091ADB18B4688DF34F</key>
+		<key>45607E34508B941D3A1025186A8BF029</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C0DDEDFF078AC8E38DD938B72806088A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECC3BEC5BD576C640751B2017A1905CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

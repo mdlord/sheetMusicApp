@@ -7,12 +7,8 @@ target 'convert' do
 
   # Pods for convert
 
-	pod ‘Beethoven’
-	pod ‘Pitchy’
-	pod ‘Hue’
-	pod ‘Cartography’
 	pod ‘AudioKit’, ‘~>2.3’
-    
+    pod 'Buckets’
 
   target 'convertTests' do
     inherit! :search_paths
