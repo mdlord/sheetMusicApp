@@ -1,0 +1,6 @@
+framework module Buckets {
+  umbrella header "Buckets-umbrella.h"
+
+  export *
+  module * { export * }
+}
