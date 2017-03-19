@@ -8,7 +8,7 @@ target 'convert' do
   # Pods for convert
 
 	pod ‘AudioKit’, ‘~>2.3’
-    pod 'Buckets’
+    	pod 'Buckets’
 
   target 'convertTests' do
     inherit! :search_paths
