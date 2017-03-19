@@ -18,10 +18,8 @@ class ViewController: UIViewController, TunerDelegate {
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     var tunerstart = false
     
-    let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
-    let startbtn: UIButton = UIButton(frame: CGRect(x: 800, y: 700, width: 200, height: 50))
-    
-
+    let btn: UIButton = UIButton(frame: CGRect(x: 100   , y: 400, width: 100, height: 50))
+    let startbtn: UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +27,21 @@ class ViewController: UIViewController, TunerDelegate {
         /* Update the background color. */
         self.view.backgroundColor = .black
         title = "Tuner".uppercased()
+
+        
+        startbtn.frame = CGRect(
+            origin: CGPoint(x: round(self.view.bounds.width - 200)  / 2,
+                            y: round(self.view.bounds.height - 350) / 1),
+            size:   CGSize(width: 200, height: 50)
+        )
+
+        //UIButton(frame: CGRect(x: self.view.bounds.width/2, y: (self.view.height - 300), width: 200, height: 50))
+        
         
         /* Setup the display view. */
         displayView.frame = CGRect(
             origin: CGPoint(x: round(self.view.bounds.width - 450)  / 2,
-                            y: round(self.view.bounds.height - 300) / 1),
+                            y: round(self.view.bounds.height - 500) / 1),
             size:   CGSize(width: 450, height: 170)
         )
         
@@ -47,7 +55,8 @@ class ViewController: UIViewController, TunerDelegate {
         btn.tag = 1
         self.view.addSubview(btn)
         
-        
+        //startbtn.centre = CGPoint(x: round(self.view.bounds.width)/2,
+        //                          y: round(self.view.bounds.width-350))
         startbtn.backgroundColor = UIColor(red: 166/255, green: 36/255, blue: 43/255, alpha: 0.5)
         startbtn.setTitle("Start", for: .normal)
         startbtn.layer.cornerRadius = 20
@@ -57,19 +66,27 @@ class ViewController: UIViewController, TunerDelegate {
         
         
         label.center = CGPoint(x: round(self.view.bounds.width)  / 2,
-                               y: round(self.view.bounds.width-350)  / 2)
+                               y: round(self.view.bounds.width-550)  / 2)
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont(name: "HelveticaNeue", size: CGFloat(50))
+        label.font = UIFont(name: "HelveticaNeue", size: CGFloat(75))
         label.text = "--"
         self.view.addSubview(label)
         
-      
+        //staff view
+        let imageName = "music-staffneg.jpg"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: (self.view.bounds.width-1000)/2, y: 500, width: self.view.bounds.width, height: 222)
+        self.view.addSubview(imageView)
         
+
+ 
     }
     
-    
     //-------------------------------------------------------
+    
     func startbuttonAction(_sender: UIButton) {
       
         tuner.delegate = self
@@ -116,32 +133,15 @@ class ViewController: UIViewController, TunerDelegate {
         }
         
 //        knobView.pitch = pitch
-        
-
         label.text = "\(pitch.description)"
-        
-        for i in 1...3{
-        print((pitch+i-2).description)
-        }
-        
-        
-        /* Calculate the difference between the nearest pitch and the second
-         * nearest pitch to express the distance in a percentage. */
-//        let previous   = pitch - 1
-//        let next       = pitch + 1
-//        let difference = distance < 0 ?
-//            (pitch.frequency - previous.frequency) :
-//            (next.frequency  - pitch.frequency)
-//        
-       //n knobView.distance = distance / difference / 2.0
+//        placenotes(String(pitch.description))
+     
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-  
 
 }
 

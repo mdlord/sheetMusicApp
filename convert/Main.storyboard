@@ -357,9 +357,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sVs-kS-0Sl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aiv-yp-veP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aiv-yp-veP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.85494251939999999" green="0.47811247029999998" blue="0.33904173520000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="0.80936399647887325" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.85494251939999999" green="0.47811247029999998" blue="0.33904173520000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

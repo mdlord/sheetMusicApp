@@ -20,7 +20,6 @@
 		BE6D756A1E5B5EDD0052E717 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75691E5B5EDD0052E717 /* Pitch.swift */; };
 		BE6D756C1E5B5F730052E717 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D756B1E5B5F730052E717 /* Note.swift */; };
 		BE6D756E1E5B622A0052E717 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D756D1E5B622A0052E717 /* Tuner.swift */; };
-		BE6D75771E5D45FA0052E717 /* mantavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D75711E5D3F470052E717 /* mantavViewController.swift */; };
 		BE6D758E1E6210140052E717 /* A#.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE6D757B1E6210140052E717 /* A#.wav */; };
 		BE6D758F1E6210140052E717 /* A.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE6D757C1E6210140052E717 /* A.wav */; };
 		BE6D75901E6210140052E717 /* B.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE6D757D1E6210140052E717 /* B.wav */; };
@@ -89,7 +88,6 @@
 		BE6D75691E5B5EDD0052E717 /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
 		BE6D756B1E5B5F730052E717 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		BE6D756D1E5B622A0052E717 /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
-		BE6D75711E5D3F470052E717 /* mantavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mantavViewController.swift; sourceTree = "<group>"; };
 		BE6D757B1E6210140052E717 /* A#.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "A#.wav"; sourceTree = "<group>"; };
 		BE6D757C1E6210140052E717 /* A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = A.wav; sourceTree = "<group>"; };
 		BE6D757D1E6210140052E717 /* B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = B.wav; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 				BE1DD1711E3C351200C683B7 /* Assets.xcassets */,
 				BE1DD1731E3C351200C683B7 /* LaunchScreen.storyboard */,
 				BE1DD1761E3C351200C683B7 /* Info.plist */,
-				BE6D75711E5D3F470052E717 /* mantavViewController.swift */,
 				BE1DD16C1E3C351200C683B7 /* ViewController.swift */,
 				BE6D756D1E5B622A0052E717 /* Tuner.swift */,
 				BE6D75691E5B5EDD0052E717 /* Pitch.swift */,
@@ -558,7 +555,6 @@
 				BE1DD16B1E3C351200C683B7 /* AppDelegate.swift in Sources */,
 				BE6D756C1E5B5F730052E717 /* Note.swift in Sources */,
 				BE6D75661E5B43530052E717 /* DisplayView.swift in Sources */,
-				BE6D75771E5D45FA0052E717 /* mantavViewController.swift in Sources */,
 				BE6D75A21E622E7F0052E717 /* PianoViewController.swift in Sources */,
 				BE6D75641E5B42000052E717 /* PlotView.swift in Sources */,
 			);
