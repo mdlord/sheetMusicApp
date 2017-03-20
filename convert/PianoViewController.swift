@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 class PianoViewController: UIViewController {
+    
     var x=1 //D
     var y=1 //E
     var z=1 //F
@@ -20,6 +21,8 @@ class PianoViewController: UIViewController {
     var dh1=1 //Dh
     var eh1=1 //Eh
     var fh1=1 //Fh
+    
+    var my_count=0
     
     @IBOutlet weak var staffone: UIImageView!
     @IBOutlet weak var stafftwo: UIImageView!
@@ -52,7 +55,26 @@ class PianoViewController: UIViewController {
     var count = 1
     var xpos = 75
     
+   //placeview4(xcoord: xpos, ycoord: Int(12))
+    //placeview4(xcoord: xpos, ycoord: Int(72))
+    
     override func viewDidLoad() {
+        
+        
+        placeview4one(xcoord: 120, ycoord:38)
+        placeview4one(xcoord: 120, ycoord: 62)
+        
+        placeview4one(xcoord: 120, ycoord:124)
+        placeview4one(xcoord: 120, ycoord: 148)
+        
+        placeview4two(xcoord: 120, ycoord:38)
+        placeview4two(xcoord: 120, ycoord: 62)
+        
+        placeview4two(xcoord: 120, ycoord:124)
+        placeview4two(xcoord: 120, ycoord: 148)
+        
+      
+        
         super.viewDidLoad()
         
 
@@ -134,21 +156,30 @@ class PianoViewController: UIViewController {
         count += 1
         xpos = xpos+75
         playMyFile(fname: "D")
+        //while my_count<9{
         if x==1{
             placeviewsemibreve(xcoord: xpos, ycoord: Int(72))
+            my_count=my_count+8
             x=x+1
         }
         else if x==2{
             placeviewhalf(xcoord: xpos, ycoord: Int(51))
+            my_count=my_count+4
             x=x+1
         }
         else if x==3{
             placeviewquartet(xcoord: xpos, ycoord: 49)
+            my_count=my_count+2
             x=x+1
         }
         else{
             placevieweight(xcoord: xpos, ycoord: 48)
+            my_count=my_count+1
         }
+       // }
+        my_count=0
+        placeviewline(xcoord: xpos+25, ycoord: 55)
+        
     }
     @IBAction func Ebtn(_ sender: Any) {
         count += 1
@@ -620,6 +651,43 @@ class PianoViewController: UIViewController {
             print("take screenshot and remove subviews")
         }
     }
+    
+    func placeview4one(xcoord:Int, ycoord:Int){
+        let imageName = "4.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 30)
+    
+            staffone.addSubview(imageView)
+        
+    }
+    
+    func placeview4two(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "4.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 30)
+        
+            stafftwo.addSubview(imageView)
+      
+    }
+    
+    func placeviewline(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "Picture1.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 30)
+        
+        staffone.addSubview(imageView)
+        
+    }
+    
+    
     //Play the file
     func playMyFile(fname: String) {
         

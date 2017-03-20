@@ -9,12 +9,17 @@
 import UIKit
 import AudioKit
 import AVFoundation
+import Buckets
+
+var arrcount:Int = 0
 
 class ViewController: UIViewController, TunerDelegate {
     
     let tuner       = Tuner()
     let displayView = DisplayView()
-
+    
+    
+    
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     var tunerstart = false
     
@@ -141,7 +146,7 @@ class ViewController: UIViewController, TunerDelegate {
         
 //        knobView.pitch = pitch
 //        label.text = "\(pitch.description)"
-        placenotes(input: String(pitch.description))
+        makequeue(input: String(pitch.description))
      
     }
     
@@ -153,15 +158,31 @@ class ViewController: UIViewController, TunerDelegate {
 
 
 
-func placenotes(input: String){
+func makequeue(input: String){
 
-    print(input)
-    
-    
-    
+    var noteq = Queue<String>()
+    var notecnt: Int
+    var notearr = [String]()
 
+    noteq.enqueue(input)
     
+    print(noteq.count)
+    //print(noteq.dequeue())
     
+    if noteq.count == 12{
+        for index in 1...12{
+            notearr.append(noteq.dequeue())
+        }
+    }
+    processarr(arrinput: notearr)
 }
+
+func processarr(arrinput: [String]){
+    print("Hi")
+    arrcount += 1
+    print(arrcount)
+}
+
+
 
 
