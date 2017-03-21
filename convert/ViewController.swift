@@ -145,7 +145,7 @@ class ViewController: UIViewController, TunerDelegate {
         }
         
 //        knobView.pitch = pitch
-//        label.text = "\(pitch.description)"
+        label.text = "\(pitch.description)"
         makequeue(input: String(pitch.description))
      
     }

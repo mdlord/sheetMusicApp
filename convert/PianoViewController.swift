@@ -54,6 +54,68 @@ class PianoViewController: UIViewController {
     
     var count = 1
     var xpos = 75
+  //--------------------timing--------------------
+    func fulld(){
+        placeviewsemibreve(xcoord: xpos, ycoord: Int(72))
+    }
+    
+    func halfd(){
+        placeviewhalf(xcoord: xpos, ycoord: Int(51))
+    }
+    
+    func quarterd(){
+        placeviewquartet(xcoord: xpos, ycoord: Int(49))
+    }
+    
+    func eighthd(){
+        placevieweight(xcoord: xpos, ycoord: Int(48))
+    }
+    
+    
+    
+    
+  
+    
+    func longPressGesture(){
+        var longPressBeginTime: TimeInterval
+        let lpg=UILongPressGestureRecognizer(target: self, action: #selector(PianoViewController.longPressed))
+        lpg.minimumPressDuration = 4
+        D.addGestureRecognizer(lpg)
+    }
+    
+    func longPressed(longPress: UIGestureRecognizer)
+    {
+        if (longPress.state == UIGestureRecognizerState.ended)
+        {
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate() -
+                longPressBeginTime + longPress.minimumPressDuration
+            print("Gesture time = \(gestureTime)")
+        }
+        else if (longPress.state == UIGestureRecognizerState.began)
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate()
+        }
+    }
+    
+    func longPressGesture1(){
+        let lpg1=UILongPressGestureRecognizer(target: self, action: #selector(PianoViewController.halfd))
+        lpg1.minimumPressDuration = 2
+        D.addGestureRecognizer(lpg1)
+    }
+    
+    func longPressGesture2(){
+        let lpg2=UILongPressGestureRecognizer(target: self, action: #selector(PianoViewController.quarterd))
+        lpg2.minimumPressDuration = 1
+        D.addGestureRecognizer(lpg2)
+    }
+    
+    func longPressGesture3(){
+        let lpg3=UILongPressGestureRecognizer(target: self, action: #selector(PianoViewController.eighthd))
+        lpg3.minimumPressDuration = 0.5
+        D.addGestureRecognizer(lpg3)
+    }
+//----------------------timing-----------------
     
    //placeview4(xcoord: xpos, ycoord: Int(12))
     //placeview4(xcoord: xpos, ycoord: Int(72))
@@ -76,6 +138,10 @@ class PianoViewController: UIViewController {
       
         
         super.viewDidLoad()
+        longPressGesture()
+        longPressGesture1()
+        longPressGesture2()
+        longPressGesture3()
         
 
         
@@ -118,32 +184,7 @@ class PianoViewController: UIViewController {
    // mapView.addGestureRecognizer(lpgr)
     
     @IBAction func Cbtn(_ sender: AnyObject) {
-        //let timeAtPress = NSDate()
-        //let elapsed = Date().timeIntervalSince(timeAtPress as Date)
-        //print(elapsed)
-        //var longPressBeginTime: TimeInterval
-        let sender: UILongPressGestureRecognizer =
-            UILongPressGestureRecognizer(target: self, action: Selector(("longPressed:")))
-            sender.minimumPressDuration = 0.2
-      
-            if (sender.state == UIGestureRecognizerState.ended)
-            {
-                //let gestureTime = NSDate.timeIntervalSinceReferenceDate - longPressBeginTime + gesture.minimumPressDuration
-                print("end")
-            }
-            else if (sender.state == UIGestureRecognizerState.began)
-            {
-                print("Began")
-                //longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
-            }
-                /*if sender.state == UIGestureRecognizerState.began
-        {
-            let alertController = UIAlertController(title: nil, message:
-                "Long-Press Gesture Detected", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-        }*/
+       
     
         playMyFile(fname: "C")
         count += 1
@@ -157,7 +198,7 @@ class PianoViewController: UIViewController {
         xpos = xpos+75
         playMyFile(fname: "D")
         //while my_count<9{
-        if x==1{
+       /* if x==1{
             placeviewsemibreve(xcoord: xpos, ycoord: Int(72))
             my_count=my_count+8
             x=x+1
@@ -178,7 +219,7 @@ class PianoViewController: UIViewController {
         }
        // }
         my_count=0
-        placeviewline(xcoord: xpos+25, ycoord: 55)
+        placeviewline(xcoord: xpos+25, ycoord: 55)*/
         
     }
     @IBAction func Ebtn(_ sender: Any) {
