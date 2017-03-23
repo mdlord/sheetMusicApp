@@ -11,7 +11,7 @@ import AudioKit
 import AVFoundation
 import Buckets
 
-var arrcount:Int = 0
+var notecount: Int = 0
 
 class ViewController: UIViewController, TunerDelegate {
     
@@ -146,7 +146,21 @@ class ViewController: UIViewController, TunerDelegate {
         
 //        knobView.pitch = pitch
         label.text = "\(pitch.description)"
-        makequeue(input: String(pitch.description))
+        
+        var currnote: String = pitch.description
+        var prevnote: String = "C3"
+        
+        
+        if (currnote == prevnote) {
+            notecount += 1;
+            prevnote = currnote
+        }
+        else if(currnote != prevnote){
+            print("\(notecount) \(currnote)")
+            notecount = 0;
+            prevnote = currnote
+        }
+        
      
     }
     
@@ -158,30 +172,8 @@ class ViewController: UIViewController, TunerDelegate {
 
 
 
-func makequeue(input: String){
 
-    var noteq = Queue<String>()
-    var notecnt: Int
-    var notearr = [String]()
 
-    noteq.enqueue(input)
-    
-    print(noteq.count)
-    //print(noteq.dequeue())
-    
-    if noteq.count == 12{
-        for index in 1...12{
-            notearr.append(noteq.dequeue())
-        }
-    }
-    processarr(arrinput: notearr)
-}
-
-func processarr(arrinput: [String]){
-    print("Hi")
-    arrcount += 1
-    print(arrcount)
-}
 
 
 
