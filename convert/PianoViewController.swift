@@ -52,34 +52,11 @@ class PianoViewController: UIViewController {
     @IBOutlet weak var Fsh_h: UIButton!
     
     var audioPlayer: AVAudioPlayer! = nil
-    //var player: AVAudioPlayer! = nil
     
     var count = 1
-    var xpos = 75
-    
-  //--------------------timing--------------------
-    /*func fulld(){
-        placeviewsemibreve(xcoord: xpos, ycoord: Int(72))
-    }
-    
-    func halfd(){
-        placeviewhalf(xcoord: xpos, ycoord: Int(51))
-    }
-    
-    func quarterd(){
-        placeviewquartet(xcoord: xpos, ycoord: Int(49))
-    }
-    
-    func eighthd(){
-        placevieweight(xcoord: xpos, ycoord: Int(48))
-    }
- */
-    
+    var xpos = 150
+    var xy=1
 
-//----------------------timing-----------------
-    
-   //placeview4(xcoord: xpos, ycoord: Int(12))
-    //placeview4(xcoord: xpos, ycoord: Int(72))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,7 +105,7 @@ class PianoViewController: UIViewController {
             
           //  while(my_count<9){
             
-            if gestureTime>=4{
+            if gestureTime>=2{
                 count += 1
                 xpos = xpos+80
                 playMyFile(fname: "D")
@@ -137,7 +114,7 @@ class PianoViewController: UIViewController {
                 my_count=my_count+8
             }
             
-            else if gestureTime>=2 && gestureTime<4{
+            else if gestureTime>=1 && gestureTime<2{
                 count += 1
                 xpos = xpos+40
                 playMyFile(fname: "D")
@@ -146,7 +123,7 @@ class PianoViewController: UIViewController {
                 my_count=my_count+4
             }
             
-            else if gestureTime>=1 && gestureTime<2{
+            else if gestureTime>=0.5 && gestureTime<1{
                 count += 1
                 xpos = xpos+20
                 playMyFile(fname: "D")
@@ -155,7 +132,7 @@ class PianoViewController: UIViewController {
                 my_count=my_count+2
             }
             
-            else {
+            else if gestureTime<0.5 {
                 count += 1
                 xpos = xpos+13
                 playMyFile(fname: "D")
@@ -167,7 +144,8 @@ class PianoViewController: UIViewController {
             
           }
         if my_count >= 8{
-            placeviewline(xcoord: xpos+5, ycoord: 55)
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
             my_count=0
             
 
@@ -480,22 +458,7 @@ class PianoViewController: UIViewController {
     
     
     
-    
-    // add a dictionary for the value of the notes to put a break after evry 4 beats
-    
-    // semibreve = whole note
-    //minim = half note
-    //quartet = one fourth note
-    //quaver = one eigth note
-    var countbt = [4 : "semibreve",
-                   2: "minim",
-                   1: "quartet",
-                   0.5: "quaver"]
-    
-    // add a new parameter to change the staff if count% 10 == 0
-    // whole note function
-    
-    
+  
     //full note
     func placeviewsemibreve(xcoord:Int, ycoord: Int)
     {
@@ -505,17 +468,17 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 45)
         
-        if count<15{
+        if (xpos<500 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if count>15 && count<17{
-            self.xpos = 75
+        else if xpos>=500 {
+            xy=2
+            xpos=150
         }
-        else if xpos>16
-        {
+        else if xy==2{
             stafftwo.addSubview(imageView)
         }
-        else {
+        else{
             print("take screenshot and remove subviews")
         }
     }
@@ -529,11 +492,14 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 45)
         
-        if count<15{
+        if (xpos<500 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if count<30{
-            count = 1
+        else if xpos>=500 {
+            xy=2
+            xpos=150
+        }
+        else if xy==2{
             stafftwo.addSubview(imageView)
         }
         else{
@@ -550,17 +516,17 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 20, height: 20)
         
-        if count<15{
+        if (xpos<500 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if count>15 && count<17{
-            self.xpos = 75
+        else if xpos>=500 {
+            xy=2
+            xpos=150
         }
-        else if xpos>16
-        {
+        else if xy==2{
             stafftwo.addSubview(imageView)
         }
-        else {
+        else{
             print("take screenshot and remove subviews")
         }
     }
@@ -586,11 +552,14 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
         
-        if count<15{
+        if (xpos<500 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if count<30{
-            count = 1
+        else if xpos>=500 {
+            xy=2
+            xpos=150
+        }
+        else if xy==2{
             stafftwo.addSubview(imageView)
         }
         else{
@@ -607,11 +576,14 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 57)
         
-        if count<15{
+        if (xpos<500 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if count<30{
-            count = 1
+        else if xpos>=500 {
+            xy=2
+            xpos=150
+        }
+        else if xy==2{
             stafftwo.addSubview(imageView)
         }
         else{
@@ -627,11 +599,14 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
         
-        if count<15{
+        if (xpos<500 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if count<30{
-            count = 1
+        else if xpos>=500 {
+            xy=2
+            xpos=150
+        }
+        else if xy==2{
             stafftwo.addSubview(imageView)
         }
         else{
@@ -647,11 +622,14 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
         
-        if count<15{
+        if (xpos<500 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if count<30{
-            count = 1
+        else if xpos>=500 {
+            xy=2
+            xpos=150
+        }
+        else if xy==2{
             stafftwo.addSubview(imageView)
         }
         else{
@@ -667,11 +645,14 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
         
-        if count<15{
+        if (xpos<500 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if count<30{
-            count = 1
+        else if xpos>=500 {
+            xy=2
+            xpos=150
+        }
+        else if xy==2{
             stafftwo.addSubview(imageView)
         }
         else{
@@ -704,11 +685,11 @@ class PianoViewController: UIViewController {
     
     func placeviewline(xcoord:Int, ycoord: Int)
     {
-        let imageName = "Picture1.png"
+        let imageName = "line.png"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 60)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 20, height: 52)
         
         staffone.addSubview(imageView)
         

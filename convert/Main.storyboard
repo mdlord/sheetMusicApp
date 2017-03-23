@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="574.21875" y="246.875"/>
         </scene>
-        <!--Pinao-->
+        <!--Piano-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PianoViewController" customModule="convert" customModuleProvider="target" sceneMemberID="viewController">
@@ -286,7 +286,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pinao" id="UAL-QF-heE">
+                    <navigationItem key="navigationItem" title="Piano" id="UAL-QF-heE">
                         <barButtonItem key="rightBarButtonItem" title="Saved " id="sgS-fD-K5K">
                             <connections>
                                 <segue destination="jcV-9Y-BTS" kind="show" id="gg9-qU-9st"/>
