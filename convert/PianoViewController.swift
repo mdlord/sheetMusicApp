@@ -14,16 +14,16 @@ var selectedRow = 0
 
 class PianoViewController: UIViewController {
     
-    var x=1 //D
-    var y=1 //E
-    var z=1 //F
-    var g1=1 //G
-    var a1=1 //A
-    var b1=1 //B
-    var ch1=1 //Ch
-    var dh1=1 //Dh
-    var eh1=1 //Eh
-    var fh1=1 //Fh
+    var x=1     //D
+    var y=1     //E
+    var z=1     //F
+    var g1=1    //G
+    var a1=1    //A
+    var b1=1    //B
+    var ch1=1   //Ch
+    var dh1=1   //Dh
+    var eh1=1   //Eh
+    var fh1=1   //Fh
     
    
     @IBOutlet weak var staffone: UIImageView!
@@ -76,10 +76,7 @@ class PianoViewController: UIViewController {
     
         let longTapges = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPress))
         D.addGestureRecognizer(longTapges)
-        
-        
-        
-        
+ 
         
     }
     
@@ -710,10 +707,4 @@ class PianoViewController: UIViewController {
         audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
-    
-    //func action(gestureRecognizer:UIGestureRecognizer) { println("long press") }
-    
-    
-    
-    
 }

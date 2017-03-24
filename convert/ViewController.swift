@@ -12,6 +12,7 @@ import AVFoundation
 import Buckets
 
 var notecount: Int = 0
+var noteq = Queue<String>()
 
 class ViewController: UIViewController, TunerDelegate {
     
@@ -147,19 +148,9 @@ class ViewController: UIViewController, TunerDelegate {
 //        knobView.pitch = pitch
         label.text = "\(pitch.description)"
         
-        var currnote: String = pitch.description
-        var prevnote: String = "C3"
         
-        
-        if (currnote == prevnote) {
-            notecount += 1;
-            prevnote = currnote
-        }
-        else if(currnote != prevnote){
-            print("\(notecount) \(currnote)")
-            notecount = 0;
-            prevnote = currnote
-        }
+        processnotes(input: String(pitch.description))
+
         
      
     }
@@ -168,6 +159,44 @@ class ViewController: UIViewController, TunerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func processnotes(input: String){
+        
+        noteq.enqueue(input)
+        
+        var prevnote: String = "C3"
+        var notearr = [String]()
+        var currnote: String
+        
+        //print(noteq.count)
+        
+        if noteq.count == 12{
+            for index in 1...12{
+                
+                notearr.append(noteq.dequeue())
+                currnote = notearr[index-1]
+                
+                if(prevnote == currnote){
+                    print("\n-----")
+                    print(currnote)
+                    print(notecount)
+                    print("\n------")
+                    notecount += 1
+                    prevnote = currnote
+                }
+                else if(prevnote != currnote){
+                    print(currnote)
+                    print(notecount)
+                    notecount = 0
+                    prevnote = currnote
+                }
+                
+                
+            }
+        }
+        
+        
+    }
+    
 }
 
 
