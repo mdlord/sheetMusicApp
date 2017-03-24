@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Musical_000000_50.png",
+      "filename" : "flat_noteneg(25).png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Musical_000000_100.png",
+      "filename" : "flat_noteneg(50).png",
       "scale" : "2x"
     },
     {

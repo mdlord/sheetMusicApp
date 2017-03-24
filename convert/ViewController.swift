@@ -13,6 +13,7 @@ import Buckets
 
 var notecount: Int = 0
 var noteq = Queue<String>()
+var prevnote: String = "C3"
 
 class ViewController: UIViewController, TunerDelegate {
     
@@ -162,8 +163,6 @@ class ViewController: UIViewController, TunerDelegate {
     func processnotes(input: String){
         
         noteq.enqueue(input)
-        
-        var prevnote: String = "C3"
         var notearr = [String]()
         var currnote: String
         
@@ -193,10 +192,7 @@ class ViewController: UIViewController, TunerDelegate {
                 
             }
         }
-        
-        
     }
-    
 }
 
 
