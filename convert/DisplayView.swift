@@ -15,6 +15,7 @@ class DisplayView: UIView {
     
     var amplitude: Double = 0.0 {
         didSet {
+            
             plotView.amplitude = amplitude
         }
     }

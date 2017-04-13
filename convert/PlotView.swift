@@ -98,10 +98,11 @@ class PlotView: UIView {
         super.init(frame: frame)
         
         /* Setup the all plots. */
+        var colors: [UIColor] = [.red, .gray, .orange, .yellow, .red]
         for i in 0 ... 4 {
             plots[i].autoresizingMask = [ .flexibleWidth, .flexibleHeight ]
             plots[i].backgroundColor  = .clear
-            plots[i].lineColor        = .white
+            plots[i].lineColor        = colors[i]
             plots[i].lineWidth        = 1.0
             plots[i].frequency        = 0.0
             plots[i].amplifier        = abs(1.0 - Double(i) * 0.4) * (i % 2 == 0 ? 1.0 : -1.0)

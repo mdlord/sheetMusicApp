@@ -28,7 +28,7 @@ class ViewController: UIViewController, TunerDelegate {
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     var tunerstart = false
     
-    let btn: UIButton = UIButton(frame: CGRect(x: 100   , y: 400, width: 100, height: 50))
+    let btn: UIButton = UIButton(frame: CGRect(x: 950 , y: 50, width: 100, height: 50))
     let startbtn: UIButton = UIButton()
     
     override func viewDidLoad() {
@@ -52,23 +52,23 @@ class ViewController: UIViewController, TunerDelegate {
         
         /* Setup the display view. */
         displayView.frame = CGRect(
-            origin: CGPoint(x: round(self.view.bounds.width - 450)  / 2,
+            origin: CGPoint(x: round(self.view.bounds.width - 650)  / 2,
                             y: round(self.view.bounds.height - 500) / 1),
-            size:   CGSize(width: 450, height: 170)
+            size:   CGSize(width: 650, height: 150)
         )
         
         
         self.view.addSubview(displayView)
         
-        btn.backgroundColor = UIColor(red: 117/255, green: 117/277, blue: 145/255, alpha: 0.5)
-        btn.setTitle("Piano", for: .normal)
-        btn.layer.cornerRadius = 20;
-        btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        btn.tag = 1
-        self.view.addSubview(btn)
-        
-        //startbtn.centre = CGPoint(x: round(self.view.bounds.width)/2,
-        //                          y: round(self.view.bounds.width-350))
+//        btn.backgroundColor = UIColor(red: 117/255, green: 117/277, blue: 145/255, alpha: 0.5)
+//        btn.setTitle("Piano", for: .normal)
+//        btn.layer.cornerRadius = 20;
+//        btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+//        btn.tag = 1
+//        self.view.addSubview(btn)
+//startbtn.centre = CGPoint(x: round(self.view.bounds.width)/2,
+//                          y: round(self.view.bounds.width-350))
+
         startbtn.backgroundColor = UIColor(red: 166/255, green: 36/255, blue: 43/255, alpha: 0.5)
         startbtn.setTitle("Start", for: .normal)
         startbtn.layer.cornerRadius = 20
@@ -522,9 +522,8 @@ class ViewController: UIViewController, TunerDelegate {
 
 
     func checkxnew(xc: Int){
-        if(xc > 1000 ){
-            print("HIIIIIIII")
-            xpos = 80
+        if(xc > 950 ){
+            xpos = 0
             let imageName = "music-staffneg.jpg"
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)

@@ -70,18 +70,22 @@ class Tuner: NSObject {
         let amplitude = Double(analyzer.trackedAmplitude.floatValue)
         
     
-        print("NOW", amplitude)
+        //print("NOW", amplitude)
         
-        /* Find nearest pitch. */
-        let pitch = Pitch.nearest(frequency)
+        if(amplitude > 0.02){
+       
+            //print("<---->")
+            /* Find nearest pitch. */
+            let pitch = Pitch.nearest(frequency)
         
-        /* Calculate the distance. */
-        let distance = frequency - pitch.frequency
+            /* Calculate the distance. */
+            let distance = frequency - pitch.frequency
         
-        /* Call the delegate. */
-        self.delegate?.tunerDidMeasurePitch(pitch, withDistance: distance,
+            /* Call the delegate. */
+            self.delegate?.tunerDidMeasurePitch(pitch, withDistance: distance,
                                             amplitude: amplitude)
+    
+        }
     }
-
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sVs-kS-0Sl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sVs-kS-0Sl">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,10 +22,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tuner" id="Er8-vh-6t4"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="PianoSegue" id="ITV-e9-8fV"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Tuner" id="Er8-vh-6t4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="MHd-7N-iC8">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VMm-g3-hSP">
+                                <rect key="frame" x="777" y="7" width="227" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Piano"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="z0M-kk-OFm"/>
+                                </connections>
+                            </button>
+                            <color key="tintColor" red="0.43488023165345829" green="0.56712702786724134" blue="0.61554808937823835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="qin-Qd-Upb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aB8-lK-NNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,7 +370,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sVs-kS-0Sl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aiv-yp-veP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aiv-yp-veP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.85494251939999999" green="0.47811247029999998" blue="0.33904173520000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -381,5 +393,8 @@
         <image name="music-staff" width="700" height="163"/>
         <image name="piano" width="2862" height="1535"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="z0M-kk-OFm"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.00045323109949999999" green="0.2491315603" blue="0.35732567310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
