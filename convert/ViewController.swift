@@ -14,6 +14,9 @@ import Buckets
 var notecount: Int = 0
 var noteq = Queue<String>()
 var prevnote: String = "C3"
+var xpos = 150
+var my_count: Int = 0
+var count: Int = 0
 
 class ViewController: UIViewController, TunerDelegate {
     
@@ -32,6 +35,8 @@ class ViewController: UIViewController, TunerDelegate {
         super.viewDidLoad()
         
         /* Update the background color. */
+        
+        print(self.view.bounds.width)
         self.view.backgroundColor = .black
         title = "Tuner".uppercased()
 
@@ -148,7 +153,7 @@ class ViewController: UIViewController, TunerDelegate {
         
 //        knobView.pitch = pitch
         label.text = "\(pitch.description)"
-        
+//        print(pitch.description)
         
         processnotes(input: String(pitch.description))
 
@@ -163,43 +168,372 @@ class ViewController: UIViewController, TunerDelegate {
     func processnotes(input: String){
         
         noteq.enqueue(input)
-        var notearr = [String]()
+//      var notearr = [String]()
         var currnote: String
         
-        //print(noteq.count)
+        currnote = input
         
-        if noteq.count == 12{
-            for index in 1...12{
-                
-                notearr.append(noteq.dequeue())
-                currnote = notearr[index-1]
-                
-                if(prevnote == currnote){
-                    print("\n-----")
-                    print(currnote)
-                    print(notecount)
-                    print("\n------")
-                    notecount += 1
-                    prevnote = currnote
+        if(prevnote == currnote){
+            notecount += 1
+            prevnote = currnote
+
+        }
+        else {
+            
+//            print("\n-----")
+//            print(currnote)
+            
+            
+            if (currnote=="C3"){
+                if (count==0){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(629))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    
                 }
-                else if(prevnote != currnote){
-                    print(currnote)
-                    print(notecount)
-                    notecount = 0
-                    prevnote = currnote
+            }
+
+            
+            if (currnote=="C4"){
+                if (count==0){
+                 xpos = xpos+80
+                 placesemibreve(xcoord: xpos, ycoord: Int(572))
+                 xpos=xpos+80
+                 my_count=my_count+8
+                 count=count+1
+                    checkxnew(xc: xpos)
                 }
+                else if(count==1){
+                xpos = xpos+40
+                placehalf(xcoord: xpos, ycoord: Int(556))
+                xpos=xpos+40
+                my_count=my_count+4
+                count=count+1
+                    print(xpos)
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(count==2){
+                xpos=xpos+20
+                placequartet(xcoord: xpos, ycoord: Int(554))
+                xpos=xpos+20
+                my_count=my_count+2
+                count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                xpos = xpos+10
+                placeeight(xcoord: xpos, ycoord: Int(555))
+                xpos=xpos+10
+                my_count=my_count+1
+                count=0
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+
+            }
+            
+            if (currnote=="D4"){
+                if (count==0){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(566))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(count==1){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(550))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(count==2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(548))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    xpos = xpos+10
+                    placeeight(xcoord: xpos, ycoord: Int(549))
+                    xpos=xpos+10
+                    my_count=my_count+1
+                    count=0
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+
+            }
+            
+            if (currnote=="E4"){
+                if (count==0){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(560))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(count==1){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(544))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(count==2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(542))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    xpos = xpos+10
+                    placeeight(xcoord: xpos, ycoord: Int(543))
+                    xpos=xpos+10
+                    my_count=my_count+1
+                    count=0
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+
+            }
+            
+            if (currnote=="F4"){
+                if (count==0){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(554))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(count==1){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(538))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(count==2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(536))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    count=count+1
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    xpos = xpos+10
+                    placeeight(xcoord: xpos, ycoord: Int(537))
+                    xpos=xpos+10
+                    my_count=my_count+1
+                    count=0
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+            }
+            
+            if (currnote=="G4"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(548))
+                xpos=xpos+80
+                my_count=my_count+8
                 
+                checkxnew(xc: xpos)
                 
             }
+            
+            if (currnote=="A4"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(542))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            
+            if (currnote=="B4"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(536))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            
+            if (currnote=="C5"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(530))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            
+            if (currnote=="A5"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(524))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            
+            if (currnote=="B5"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(518))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            
+            if (currnote=="C5"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(512))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            
+            if (currnote=="D5"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(506))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            
+            if (currnote=="E5"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(500))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            
+            if (currnote=="F5"){
+                xpos = xpos+80
+                placesemibreve(xcoord: xpos, ycoord: Int(494))
+                xpos=xpos+80
+                my_count=my_count+8
+                
+                checkxnew(xc: xpos)
+                
+            }
+            print(notecount)
+            
+            notecount = 1
+            prevnote = currnote
+        }
+        
+    }
+    
+    
+    func placesemibreve(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "semibreveneg(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
+        self.view.addSubview(imageView)
+       
+    }
+    
+    //Half note
+    func placehalf(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "half_noteneg(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
+        self.view.addSubview(imageView)
+    }
+    
+    //Quarter Note
+    func placequartet(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "quarter_noteneg(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
+        self.view.addSubview(imageView)
+    }
+    
+    //Eighth note
+    func placeeight(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "eighth_noteneg(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 57)
+        self.view.addSubview(imageView)
+    }
+
+
+    func checkxnew(xc: Int){
+        if(xc > 1000 ){
+            print("HIIIIIIII")
+            xpos = 80
+            let imageName = "music-staffneg.jpg"
+            let image = UIImage(named: imageName)
+            let imageView = UIImageView(image: image!)
+            imageView.contentMode = .scaleAspectFit
+            imageView.frame = CGRect(x: (self.view.bounds.width-1000)/2, y: 500, width: self.view.bounds.width, height: 222)
+            self.view.addSubview(imageView)
+
         }
     }
 }
-
-
-
-
-
-
-
 
 

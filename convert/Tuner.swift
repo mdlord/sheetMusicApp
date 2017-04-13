@@ -69,6 +69,9 @@ class Tuner: NSObject {
         let frequency = Double(analyzer.trackedFrequency.floatValue)
         let amplitude = Double(analyzer.trackedAmplitude.floatValue)
         
+    
+        print("NOW", amplitude)
+        
         /* Find nearest pitch. */
         let pitch = Pitch.nearest(frequency)
         

@@ -73,17 +73,188 @@ class PianoViewController: UIViewController {
         
         placeview4two(xcoord: 120, ycoord:124)
         placeview4two(xcoord: 120, ycoord: 148)
-    
-        let longTapges = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPress))
-        D.addGestureRecognizer(longTapges)
+        
+        let tapC = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressC))
+        C.addGestureRecognizer(tapC)
+
+        let longTapgesC = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressC))
+        C.addGestureRecognizer(longTapgesC)
+        
+        let tapD = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressD))
+        D.addGestureRecognizer(tapD)
+        
+        let longTapgesD = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressD))
+        D.addGestureRecognizer(longTapgesD)
+        
+        let tapE = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressE))
+        E.addGestureRecognizer(tapE)
+        
+        let longTapgesE = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressE))
+        E.addGestureRecognizer(longTapgesE)
+        
+        let tapF = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressF))
+        F.addGestureRecognizer(tapF)
+        
+        let longTapgesF = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressF))
+        F.addGestureRecognizer(longTapgesF)
+        
+        let tapG = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressG))
+        G.addGestureRecognizer(tapG)
+        
+        let longTapgesG = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressG))
+        G.addGestureRecognizer(longTapgesG)
+        
+        let tapA = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressA))
+        A.addGestureRecognizer(tapA)
+        
+        let longTapgesA = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressA))
+        A.addGestureRecognizer(longTapgesA)
+        
+        let tapB = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressB))
+        B.addGestureRecognizer(tapB)
+        
+        let longTapgesB = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressB))
+        B.addGestureRecognizer(longTapgesB)
+        
+        let tapCh = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressCh))
+        C_h.addGestureRecognizer(tapCh)
+        
+        let longTapgesCh = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressCh))
+        C_h.addGestureRecognizer(longTapgesCh)
+        
+        let tapDh = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressDh))
+        D_h.addGestureRecognizer(tapDh)
+        
+        let longTapgesDh = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressDh))
+        D_h.addGestureRecognizer(longTapgesDh)
+        
+        let tapEh = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressEh))
+        E_h.addGestureRecognizer(tapEh)
+        
+        let longTapgesEh = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressEh))
+        E_h.addGestureRecognizer(longTapgesEh)
+        
+        let tapFh = UITapGestureRecognizer(target: self, action: #selector(PianoViewController.tappressFh))
+        F_h.addGestureRecognizer(tapFh)
  
+        let longTapgesFh = UILongPressGestureRecognizer(target: self,  action: #selector(PianoViewController.LongPressFh))
+        F_h.addGestureRecognizer(longTapgesFh)
         
     }
     
     var longPressBeginTime: TimeInterval = 0.0
     var my_count: Int=0
     
-    func LongPress(sender: UILongPressGestureRecognizer){
+    func tappressC(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "C")
+            placevieweight(xcoord: xpos, ycoord: Int(54))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func LongPressC(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "C")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(78))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "C")
+                placeviewhalf(xcoord: xpos, ycoord: Int(57))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "C")
+                placeviewquartet(xcoord: xpos, ycoord: Int(55))
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "C")
+                placevieweight(xcoord: xpos, ycoord: Int(54))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+            
+        }
+        
+        
+        //}
+        
+    }
+    
+    func tappressD(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "D")
+            placevieweight(xcoord: xpos, ycoord: Int(48))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+    }
+    
+    func LongPressD(sender: UILongPressGestureRecognizer){
        
     
         if sender.state == .began
@@ -145,13 +316,787 @@ class PianoViewController: UIViewController {
             xpos=xpos+10
             my_count=0
             
-
         }
         
+    }
+    
+    
+    func tappressE(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "E")
+            placevieweight(xcoord: xpos, ycoord: Int(42))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
         
-       //}
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
         
     }
+    
+    func LongPressE(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "E")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(66))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "E")
+                placeviewhalf(xcoord: xpos, ycoord: Int(45))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "E")
+                placeviewquartet(xcoord: xpos, ycoord: Int(43))
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "E")
+                placevieweight(xcoord: xpos, ycoord: Int(42))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func tappressF(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "F")
+            placevieweight(xcoord: xpos, ycoord: Int(36))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func LongPressF(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "F")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(60))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "F")
+                placeviewhalf(xcoord: xpos, ycoord: Int(39))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "F")
+                placeviewquartet(xcoord: xpos, ycoord: Int(37))
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "F")
+                placevieweight(xcoord: xpos, ycoord: Int(36))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func tappressG(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "G")
+            placevieweight(xcoord: xpos, ycoord: Int(30))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func LongPressG(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "G")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(54))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "G")
+                placeviewhalf(xcoord: xpos, ycoord: Int(33))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "G")
+                placeviewquartet(xcoord: xpos, ycoord: Int(31))
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "G")
+                placevieweight(xcoord: xpos, ycoord: Int(30))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func tappressA(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "A")
+            placevieweight(xcoord: xpos, ycoord: Int(24))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func LongPressA(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "A")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(48))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "A")
+                placeviewhalf(xcoord: xpos, ycoord: Int(27))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "A")
+                placeviewquartet(xcoord: xpos, ycoord: Int(25))
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "A")
+                placevieweight(xcoord: xpos, ycoord: Int(24))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func tappressB(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "B")
+            placevieweight(xcoord: xpos, ycoord: Int(18))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func LongPressB(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "B")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(42))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "B")
+                placeviewhalf(xcoord: xpos, ycoord: Int(21))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "B")
+                placeviewquartet(xcoord: xpos, ycoord: Int(19))
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "B")
+                placevieweight(xcoord: xpos, ycoord: Int(18))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func tappressCh(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "C4")
+            placevieweight(xcoord: xpos, ycoord: Int(18))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func LongPressCh(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "C4")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(36))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "C4")
+                placeviewinverthalf(xcoord: xpos, ycoord: Int(51))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "C4")
+                placeviewinvertquartet(xcoord: xpos, ycoord: 49)
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "C4")
+                placevieweight(xcoord: xpos, ycoord: Int(18))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func tappressDh(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "D4")
+            placevieweight(xcoord: xpos, ycoord: Int(18))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+
+    func LongPressDh(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "D4")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(30))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "D4")
+                placeviewinverthalf(xcoord: xpos, ycoord: Int(45))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "D4")
+                placeviewinvertquartet(xcoord: xpos, ycoord: 43)
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "D4")
+                placevieweight(xcoord: xpos, ycoord: Int(18))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func tappressEh(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "E4")
+            placevieweight(xcoord: xpos, ycoord: Int(18))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+
+    
+    func LongPressEh(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "E4")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(24))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "E4")
+                placeviewinverthalf(xcoord: xpos, ycoord: Int(39))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "e4")
+                placeviewinvertquartet(xcoord: xpos, ycoord: 37)
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "E4")
+                placevieweight(xcoord: xpos, ycoord: Int(18))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+    
+    func tappressFh(sender: UITapGestureRecognizer){
+        if sender.state == .ended
+        {
+            count += 1
+            xpos = xpos+13
+            playMyFile(fname: "F4")
+            placevieweight(xcoord: xpos, ycoord: Int(18))
+            xpos=xpos+13
+            my_count=my_count+1
+        }
+        
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+
+    func LongPressFh(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == .began
+        {
+            print("Began")
+            longPressBeginTime = NSDate.timeIntervalSinceReferenceDate
+            print(longPressBeginTime)
+            
+        }
+        else if sender.state == .ended{
+            print("Ended")
+            
+            let gestureTime = NSDate.timeIntervalSinceReferenceDate -
+            longPressBeginTime
+            print("Gesture time = \(gestureTime)")
+            
+            //  while(my_count<9){
+            
+            if gestureTime>=2{
+                count += 1
+                xpos = xpos+80
+                playMyFile(fname: "F4")
+                placeviewsemibreve(xcoord: xpos, ycoord: Int(18))
+                xpos=xpos+80
+                my_count=my_count+8
+            }
+                
+            else if gestureTime>=1 && gestureTime<2{
+                count += 1
+                xpos = xpos+40
+                playMyFile(fname: "F4")
+                placeviewinverthalf(xcoord: xpos, ycoord: Int(33))
+                xpos=xpos+40
+                my_count=my_count+4
+            }
+                
+            else if gestureTime>=0.5 && gestureTime<1{
+                count += 1
+                xpos = xpos+20
+                playMyFile(fname: "F4")
+                placeviewinvertquartet(xcoord: xpos, ycoord: 31)
+                xpos=xpos+20
+                my_count=my_count+2
+            }
+                
+            else if gestureTime<0.5 {
+                count += 1
+                xpos = xpos+13
+                playMyFile(fname: "F4")
+                placevieweight(xcoord: xpos, ycoord: Int(18))
+                xpos=xpos+13
+                my_count=my_count+1
+                
+            }
+            
+        }
+        if my_count >= 8{
+            placeviewline(xcoord: xpos+10, ycoord: 40)
+            xpos=xpos+10
+            my_count=0
+            
+        }
+        
+    }
+
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -168,187 +1113,7 @@ class PianoViewController: UIViewController {
         }
     }
     
-    
-   
-    
-    @IBAction func Cbtn(_ sender: AnyObject) {
-       
-        
-    
-        playMyFile(fname: "C")
-        count += 1
-        xpos = xpos+75
-        placeviewsemibreve(xcoord: xpos, ycoord: 78)
-    }
-    
-   
-   
-    @IBAction func Ebtn(_ sender: Any) {
-        count += 1
-        xpos = xpos+75
-        playMyFile(fname: "E")
-        if y==1{
-        placeviewsemibreve(xcoord: xpos, ycoord: Int(66))
-        y=y+1
-        }
-        else if y==2{
-        placeviewhalf(xcoord: xpos, ycoord: Int(45))
-            y=y+1
-        }
-        else if y==3{
-            placeviewquartet(xcoord: xpos, ycoord: 43)
-            y=y+1
-        }
-        else{
-            placevieweight(xcoord: xpos, ycoord: 42)
-        }
-    }
-    @IBAction func Fbtn(_ sender: Any) {
-        count += 1
-        xpos = xpos+75
-        playMyFile(fname: "F")
-        //placeviewsemibreve(xcoord: xpos, ycoord: Int(60))
-        if z==1{
-            placeviewsemibreve(xcoord: xpos, ycoord: Int(60))
-            z=z+1
-        }
-        else if z==2{
-            placeviewhalf(xcoord: xpos, ycoord: Int(39))
-            z=z+1
-        }
-        else if z==3{
-            placeviewquartet(xcoord: xpos, ycoord: 37)
-            z=z+1
-        }
-        else{
-            placevieweight(xcoord: xpos, ycoord: 36)
-        }
-
-        
-    }
-    @IBAction func Gbtn(_ sender: Any) {
-        count += 1
-        xpos = xpos+75
-        playMyFile(fname: "G")
-        if g1==1{
-            placeviewsemibreve(xcoord: xpos, ycoord: Int(54))
-            g1=g1+1
-        }
-        else if g1==2{
-            placeviewhalf(xcoord: xpos, ycoord: Int(33))
-            g1=g1+1
-        }
-        else if g1==3{
-            placeviewquartet(xcoord: xpos, ycoord: 31)
-            g1=g1+1
-        }
-        else{
-            placevieweight(xcoord: xpos, ycoord: 30)
-        }
-    }
-    @IBAction func Abtn(_ sender: Any) {
-        count += 1
-        xpos = xpos+75
-        playMyFile(fname: "A")
-        if a1==1{
-            placeviewsemibreve(xcoord: xpos, ycoord: Int(48))
-            a1=a1+1
-        }
-        else if a1==2{
-            placeviewhalf(xcoord: xpos, ycoord: Int(27))
-            a1=a1+1
-        }
-        else if a1==3{
-            placeviewquartet(xcoord: xpos, ycoord: 25)
-            a1=a1+1
-        }
-        else{
-            placevieweight(xcoord: xpos, ycoord: 24)
-        }
-    }
-    @IBAction func Bbtn(_ sender: Any) {
-        count += 1
-        xpos = xpos+75
-        playMyFile(fname: "B")
-        if b1==1{
-            placeviewsemibreve(xcoord: xpos, ycoord: Int(42))
-            b1=b1+1
-        }
-        else if b1==2{
-            placeviewhalf(xcoord: xpos, ycoord: Int(21))
-            b1=b1+1
-        }
-        else if a1==3{
-            placeviewquartet(xcoord: xpos, ycoord: 19)
-            b1=b1+1
-        }
-        else{
-            placevieweight(xcoord: xpos, ycoord: 18)
-        }
-    }
-    @IBAction func C_hbtn(_ sender: Any) {
-        count += 1
-        xpos = xpos+75
-        playMyFile(fname: "C4")
-        if ch1==1{
-            placeviewsemibreve(xcoord: xpos, ycoord: Int(36))
-            ch1=ch1+1
-        }
-        else if ch1==2{
-            placeviewinverthalf(xcoord: xpos, ycoord: Int(51))
-            ch1=ch1+1
-        }
-        else if ch1==3{
-            placeviewinvertquartet(xcoord: xpos, ycoord: 49)
-            ch1=ch1+1
-        }
-        else{
-            placevieweight(xcoord: xpos, ycoord: 18)
-        }
-    }
-    
-    
-    @IBAction func D_hbtn(_ sender: Any) {
-        count += 1
-        xpos = xpos+75
-        playMyFile(fname: "D4")
-        if dh1==1{
-            placeviewsemibreve(xcoord: xpos, ycoord: Int(30))
-            dh1=dh1+1
-        }
-        else if dh1==2{
-            placeviewinverthalf(xcoord: xpos, ycoord: Int(45))
-            dh1=dh1+1
-        }
-        else if dh1==3{
-            placeviewinvertquartet(xcoord: xpos, ycoord: 43)
-            dh1=dh1+1
-        }
-        else{
-            placevieweight(xcoord: xpos, ycoord: 18)
-        }
-    }
-
-    @IBAction func E_hbtn(_ sender: AnyObject) {
-        count += 1
-        xpos = xpos+75
-        playMyFile(fname: "E4")
-        if eh1==1{
-            placeviewsemibreve(xcoord: xpos, ycoord: Int(24))
-            eh1=eh1+1
-        }
-        else if eh1==2{
-            placeviewinverthalf(xcoord: xpos, ycoord: Int(39))
-            eh1=eh1+1
-        }
-        else if eh1==3{
-            placeviewinvertquartet(xcoord: xpos, ycoord: 37)
-            eh1=eh1+1
-        }
-        else{
-            placevieweight(xcoord: xpos, ycoord: 18)
-        }
-    }
+  
     
     @IBAction func F_hbtn(_ sender: AnyObject) {
         count += 1
@@ -465,10 +1230,10 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 45)
         
-        if (xpos<500 && xy==1) {
+        if (xpos<900 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if xpos>=500 {
+        else if xpos>=900 {
             xy=2
             xpos=150
         }
@@ -489,10 +1254,10 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 45)
         
-        if (xpos<500 && xy==1) {
+        if (xpos<900 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if xpos>=500 {
+        else if xpos>=900 {
             xy=2
             xpos=150
         }
@@ -513,10 +1278,10 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 20, height: 20)
         
-        if (xpos<500 && xy==1) {
+        if (xpos<900 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if xpos>=500 {
+        else if xpos>=900 {
             xy=2
             xpos=150
         }
@@ -549,10 +1314,10 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
         
-        if (xpos<500 && xy==1) {
+        if (xpos<900 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if xpos>=500 {
+        else if xpos>=900 {
             xy=2
             xpos=150
         }
@@ -573,10 +1338,10 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 57)
         
-        if (xpos<500 && xy==1) {
+        if (xpos<900 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if xpos>=500 {
+        else if xpos>=900 {
             xy=2
             xpos=150
         }
@@ -596,10 +1361,10 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
         
-        if (xpos<500 && xy==1) {
+        if (xpos<900 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if xpos>=500 {
+        else if xpos>=900 {
             xy=2
             xpos=150
         }
@@ -619,10 +1384,10 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
         
-        if (xpos<500 && xy==1) {
+        if (xpos<900 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if xpos>=500 {
+        else if xpos>=900 {
             xy=2
             xpos=150
         }
@@ -642,10 +1407,10 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
         
-        if (xpos<500 && xy==1) {
+        if (xpos<900 && xy==1) {
             staffone.addSubview(imageView)
         }
-        else if xpos>=500 {
+        else if xpos>=900 {
             xy=2
             xpos=150
         }
@@ -688,7 +1453,17 @@ class PianoViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.frame = CGRect(x: xcoord, y: ycoord, width: 20, height: 52)
         
-        staffone.addSubview(imageView)
+        if (xpos<900 && xy==1) {
+            staffone.addSubview(imageView)
+        }
+        else if xpos>=900 {
+            xy=2
+            xpos=150
+        }
+        else if xy==2{
+            stafftwo.addSubview(imageView)
+        }
+
         
     }
     
