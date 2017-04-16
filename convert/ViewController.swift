@@ -36,7 +36,7 @@ class ViewController: UIViewController, TunerDelegate {
         
         /* Update the background color. */
         
-        print(self.view.bounds.width)
+        //print(self.view.bounds.width)
         self.view.backgroundColor = .black
         title = "Tuner".uppercased()
 
@@ -180,9 +180,9 @@ class ViewController: UIViewController, TunerDelegate {
         }
         else {
             
-//            print("\n-----")
-//            print(currnote)
-            
+            print("\n-----")
+            print(currnote)
+            print(notecount)
             
             if (currnote=="C3"){
                 if (count==0){
@@ -196,31 +196,27 @@ class ViewController: UIViewController, TunerDelegate {
 
             
             if (currnote=="C4"){
-                if (count==0){
+                if (notecount>=8){
                  xpos = xpos+80
                  placesemibreve(xcoord: xpos, ycoord: Int(572))
                  xpos=xpos+80
                  my_count=my_count+8
-                 count=count+1
                     checkxnew(xc: xpos)
                 }
-                else if(count==1){
+                else if(notecount<8 && notecount>=4){
                 xpos = xpos+40
                 placehalf(xcoord: xpos, ycoord: Int(556))
                 xpos=xpos+40
                 my_count=my_count+4
-                count=count+1
-                    print(xpos)
                     checkxnew(xc: xpos)
                     
                 }
-                else if(count==2){
+                else if(notecount>=2 && notecount<4 ){
                 xpos=xpos+20
                 placequartet(xcoord: xpos, ycoord: Int(554))
                 xpos=xpos+20
                 my_count=my_count+2
-                count=count+1
-                    
+                
                     checkxnew(xc: xpos)
                     
                 }
@@ -230,7 +226,6 @@ class ViewController: UIViewController, TunerDelegate {
                 xpos=xpos+10
                 my_count=my_count+1
                 count=0
-                    
                     checkxnew(xc: xpos)
                     
                 }
@@ -467,7 +462,7 @@ class ViewController: UIViewController, TunerDelegate {
                 checkxnew(xc: xpos)
                 
             }
-            print(notecount)
+            //print(notecount)
             
             notecount = 1
             prevnote = currnote
@@ -498,10 +493,30 @@ class ViewController: UIViewController, TunerDelegate {
         self.view.addSubview(imageView)
     }
     
+    func placeinvhalf(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "half_noteinvneg(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 52)
+        self.view.addSubview(imageView)
+    }
+    
     //Quarter Note
     func placequartet(xcoord:Int, ycoord: Int)
     {
         let imageName = "quarter_noteneg(25).png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: xcoord, y: ycoord, width: 25, height: 56)
+        self.view.addSubview(imageView)
+    }
+    
+    func placeinvquartet(xcoord:Int, ycoord: Int)
+    {
+        let imageName = "quarter_noteinvneg(25).png"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
         imageView.contentMode = .scaleAspectFit
@@ -522,7 +537,7 @@ class ViewController: UIViewController, TunerDelegate {
 
 
     func checkxnew(xc: Int){
-        if(xc > 950 ){
+        if(xc > 850 ){
             xpos = 0
             let imageName = "music-staffneg.jpg"
             let image = UIImage(named: imageName)
@@ -530,6 +545,7 @@ class ViewController: UIViewController, TunerDelegate {
             imageView.contentMode = .scaleAspectFit
             imageView.frame = CGRect(x: (self.view.bounds.width-1000)/2, y: 500, width: self.view.bounds.width, height: 222)
             self.view.addSubview(imageView)
+            xpos=150
 
         }
     }

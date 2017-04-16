@@ -98,7 +98,7 @@ class PlotView: UIView {
         super.init(frame: frame)
         
         /* Setup the all plots. */
-        var colors: [UIColor] = [.red, .gray, .orange, .yellow, .red]
+        var colors: [UIColor] = [.red, .orange, .gray, .yellow, .red]
         for i in 0 ... 4 {
             plots[i].autoresizingMask = [ .flexibleWidth, .flexibleHeight ]
             plots[i].backgroundColor  = .clear
