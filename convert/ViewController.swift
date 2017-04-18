@@ -152,7 +152,9 @@ class ViewController: UIViewController, TunerDelegate {
         }
         
 //        knobView.pitch = pitch
+        //if amplitude >
         label.text = "\(pitch.description)"
+        print(amplitude)
 //        print(pitch.description)
         
         processnotes(input: String(pitch.description))
@@ -170,6 +172,7 @@ class ViewController: UIViewController, TunerDelegate {
         noteq.enqueue(input)
 //      var notearr = [String]()
         var currnote: String
+        var finnote: String
         
         currnote = input
         
@@ -181,58 +184,1224 @@ class ViewController: UIViewController, TunerDelegate {
         else {
             
             print("\n-----")
-            print(currnote)
+            print(prevnote)
+            finnote = prevnote
             print(notecount)
             
-            if (currnote=="C3"){
-                if (count==0){
+            if (finnote=="D2"){
+                if (notecount>=8){
                     xpos = xpos+80
-                    placesemibreve(xcoord: xpos, ycoord: Int(629))
+                    placesemibreve(xcoord: xpos, ycoord: Int(662))
                     xpos=xpos+80
                     my_count=my_count+8
-                    
-                }
-            }
-
-            
-            if (currnote=="C4"){
-                if (notecount>=8){
-                 xpos = xpos+80
-                 placesemibreve(xcoord: xpos, ycoord: Int(572))
-                 xpos=xpos+80
-                 my_count=my_count+8
                     checkxnew(xc: xpos)
                 }
-                else if(notecount<8 && notecount>=4){
-                xpos = xpos+40
-                placehalf(xcoord: xpos, ycoord: Int(556))
-                xpos=xpos+40
-                my_count=my_count+4
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(646))
+                    xpos=xpos+40
+                    my_count=my_count+4
                     checkxnew(xc: xpos)
                     
                 }
-                else if(notecount>=2 && notecount<4 ){
-                xpos=xpos+20
-                placequartet(xcoord: xpos, ycoord: Int(554))
-                xpos=xpos+20
-                my_count=my_count+2
-                
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(644))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(646))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
                     checkxnew(xc: xpos)
                     
                 }
                 else{
-                xpos = xpos+10
-                placeeight(xcoord: xpos, ycoord: Int(555))
-                xpos=xpos+10
-                my_count=my_count+1
-                count=0
+                    
+                }
+                
+            }
+
+            
+            if (finnote=="E2"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(656))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(640))
+                    xpos=xpos+40
+                    my_count=my_count+4
                     checkxnew(xc: xpos)
                     
                 }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(638))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(640))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
 
+            
+            if (finnote=="F2"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(650))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(634))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(632))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(634))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+
+            
+            if (finnote=="G2"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(644))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(628))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(626))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(628))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+
+            
+            if (finnote=="A2"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(638))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(622))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(620))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(622))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+
+            
+            if (finnote=="B2"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(632))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(616))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(614))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(616))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
             }
             
-            if (currnote=="D4"){
+            if (finnote=="C2"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(626))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(610))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(608))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(610))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="D3"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(621))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(641))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(639))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+
+            
+            if (finnote=="E3"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(615))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(635))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(633))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+
+            
+            if (finnote=="F3"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(609))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(629))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(627))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="G3"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(603))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(623))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(621))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="A3"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(597))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(617))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(615))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="B3"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(591))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(611))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(609))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+
+            
+            if (finnote=="C3"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(585))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(605))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(603))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+
+            
+            if (finnote=="C4"){
+                    if (notecount>=8){
+                        xpos = xpos+80
+                        placesemibreve(xcoord: xpos, ycoord: Int(573))
+                        xpos=xpos+80
+                        my_count=my_count+8
+                        checkxnew(xc: xpos)
+                    }
+                    else if(notecount<8 && notecount>=5){
+                        xpos = xpos+40
+                        placehalf(xcoord: xpos, ycoord: Int(557))
+                        xpos=xpos+40
+                        my_count=my_count+4
+                        checkxnew(xc: xpos)
+                        
+                    }
+                    else if(notecount<5 && notecount>2){
+                        xpos=xpos+20
+                        placequartet(xcoord: xpos, ycoord: Int(555))
+                        xpos=xpos+20
+                        my_count=my_count+2
+                        
+                        checkxnew(xc: xpos)
+                        
+                    }
+                    else if(notecount==2){
+                        xpos=xpos+20
+                        placeeight(xcoord: xpos, ycoord: Int(557))
+                        xpos=xpos+20
+                        my_count=my_count+2
+                        
+                        checkxnew(xc: xpos)
+                        
+                    }
+                    else{
+                        
+                    }
+                    
+                }
+            
+            if (finnote=="D4"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(567))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(551))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(549))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(551))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="E4"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(561))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(545))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(543))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(545))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="F4"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(555))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(539))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(537))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(539))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="G4"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(549))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(533))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(531))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(533))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="B4"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(543))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placehalf(xcoord: xpos, ycoord: Int(527))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>2){
+                    xpos=xpos+20
+                    placequartet(xcoord: xpos, ycoord: Int(525))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount==2){
+                    xpos=xpos+20
+                    placeeight(xcoord: xpos, ycoord: Int(527))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="B4"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(533))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(557))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(555))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="C5"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(531))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(551))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(549))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="D5"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(525))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(545))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(543))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="E5"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(519))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(539))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(537))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="F5"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(513))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(533))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(531))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="G5"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(507))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(527))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(525))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="A5"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(501))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(521))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(519))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="B5"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(495))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(515))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(513))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="C6"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(489))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(509))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(507))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            /*if (finnote=="D6"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(483))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(503))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(501))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+
+            if (finnote=="E6"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(477))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(497))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(495))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="F6"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(471))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(491))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(489))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="G6"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(465))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(485))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(483))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="A6"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(459))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(479))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(477))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }
+            
+            if (finnote=="B6"){
+                if (notecount>=8){
+                    xpos = xpos+80
+                    placesemibreve(xcoord: xpos, ycoord: Int(453))
+                    xpos=xpos+80
+                    my_count=my_count+8
+                    checkxnew(xc: xpos)
+                }
+                else if(notecount<8 && notecount>=5){
+                    xpos = xpos+40
+                    placeinvhalf(xcoord: xpos, ycoord: Int(473))
+                    xpos=xpos+40
+                    my_count=my_count+4
+                    checkxnew(xc: xpos)
+                    
+                }
+                else if(notecount<5 && notecount>=2){
+                    xpos=xpos+20
+                    placeinvquartet(xcoord: xpos, ycoord: Int(471))
+                    xpos=xpos+20
+                    my_count=my_count+2
+                    
+                    checkxnew(xc: xpos)
+                    
+                }
+                else{
+                    
+                }
+                
+            }*/
+
+
+            
+           /* if (currnote=="D4"){
                 if (count==0){
                     xpos = xpos+80
                     placesemibreve(xcoord: xpos, ycoord: Int(566))
@@ -462,6 +1631,7 @@ class ViewController: UIViewController, TunerDelegate {
                 checkxnew(xc: xpos)
                 
             }
+            */
             //print(notecount)
             
             notecount = 1

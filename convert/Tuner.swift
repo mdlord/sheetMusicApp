@@ -52,7 +52,7 @@ class Tuner: NSObject {
         microphone.play()
         
         /* Initialize and schedule a new run loop timer. */
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self,
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self,
                                      selector: #selector(Tuner.tick),
                                      userInfo: nil,
                                      repeats: true)

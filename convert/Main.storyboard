@@ -27,12 +27,15 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VMm-g3-hSP">
                                 <rect key="frame" x="777" y="7" width="227" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Piano"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Piano">
+                                    <color key="titleColor" red="0.9901432966" green="0.61352832010000002" blue="0.27504627469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="push" id="z0M-kk-OFm"/>
                                 </connections>
                             </button>
-                            <color key="tintColor" red="0.43488023165345829" green="0.56712702786724134" blue="0.61554808937823835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.61554808937823835" green="0.45718793813141817" blue="0.17997600577548992" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="qin-Qd-Upb"/>
                             </connections>
@@ -396,5 +399,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="z0M-kk-OFm"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.00045323109949999999" green="0.2491315603" blue="0.35732567310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="1" green="0.63547000600805625" blue="0.25673845829911013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
