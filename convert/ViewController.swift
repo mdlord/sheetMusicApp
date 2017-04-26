@@ -132,7 +132,7 @@ class ViewController: UIViewController, TunerDelegate {
     func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
         if btnsendtag.tag == 1 {
-            print("Piano")
+            //print("Piano")
             self.performSegue(withIdentifier: "PianoSegue", sender: self)
         }
     }
@@ -154,10 +154,26 @@ class ViewController: UIViewController, TunerDelegate {
 //        knobView.pitch = pitch
         //if amplitude >
         label.text = "\(pitch.description)"
-        print(amplitude)
+        //print(amplitude)
 //        print(pitch.description)
         
         processnotes(input: String(pitch.description))
+        
+        
+        /* Calculate the difference between the nearest pitch and the second
+         * nearest pitch to express the distance in a percentage. */
+        let previous   = pitch - 1
+        let next       = pitch + 1
+        let difference = distance < 0 ?
+            (pitch.frequency - previous.frequency) :
+            (next.frequency  - pitch.frequency)
+        
+        //knobView.distance = distance / difference / 2.0
+        
+        //print(distance/difference/2.0)
+        let percentage = (1 - abs((distance/difference/2.0)))*100
+    
+        print(percentage)
 
         
      
@@ -183,10 +199,10 @@ class ViewController: UIViewController, TunerDelegate {
         }
         else {
             
-            print("\n-----")
-            print(prevnote)
+            //print("\n-----")
+            //print(prevnote)
             finnote = prevnote
-            print(notecount)
+            //print(notecount)
             
             if (finnote=="D2"){
                 if (notecount>=8){
